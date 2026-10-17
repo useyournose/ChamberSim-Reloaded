@@ -56,7 +56,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: lint md
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff #v24.2.0
+        with:
+          globs: 'docs/build/docs/*.md'
+
       - name: Install requirements
+        if: always()
         shell: bash
         working-directory: docs/build
         run: |
@@ -66,7 +72,7 @@ jobs:
         shell: bash
         working-directory: docs/build
         run: |
-          playwright install
+          playwright install --with-deps
 
       - name: Build site
         shell: bash
