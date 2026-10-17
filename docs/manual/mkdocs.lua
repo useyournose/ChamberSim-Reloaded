@@ -19,6 +19,19 @@ function Table(table)
   )
 end
 
+function Span(span)
+  if span.classes:includes("sans-serif") then
+    return span.content
+  end
+end
+
+function Header(header)
+  if header.level == 4 then
+    header.level = 3
+    return header
+  end
+end
+
 function Div(div)
   for class, title in pairs(admonition_titles) do
     if div.classes:includes(class) then
