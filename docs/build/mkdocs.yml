@@ -15,7 +15,7 @@ nav:
     - New Loads: ug_newload.md
     - Results: ug_results.md
     - Measurements: ug_measurements.md
-    - Reports: ug_reports.md
+    - Reporting: ug_reporting.md
     - Tools: ug_tools.md
     - Settings: ug_settings.md
     - Troubleshooting: ug_troubleshooting.md
@@ -23,6 +23,7 @@ nav:
   - Data Sources: DATA_SOURCES.md
   - Accuracy: ACCURACY.md
   - Solver: SOLVER.md
+  - Fit your Powder: FIT_POWDER.md
   - Cheatsheet: CHEATSHEET.md
   - Contributing: CONTRIBUTING.md
 
@@ -36,6 +37,7 @@ theme:
     - toc.follow
     - navigation.footer
   logo: images/logo.png
+  favicon: images/favicon.svg
 
 markdown_extensions:
   - admonition
@@ -60,7 +62,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Schildkroet
-      favicon: images/logo.png
+
 plugins:      
   - exporter:
       formats:
