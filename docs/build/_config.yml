@@ -7,3 +7,7 @@ relative_links:
   enabled: true
   collections: true
 remote_theme: pages-themes/cayman@v0.2.0
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
