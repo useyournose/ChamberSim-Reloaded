@@ -48,5 +48,5 @@ plugins:
           concurrency: 8
           aggregator:
             enabled: true
-            output: .well-known/site.pdf
+            output: documentation.pdf
             covers: all
