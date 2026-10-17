@@ -6,7 +6,7 @@ Linux the program draws its own title bar with the menu in the title row
 (**File** $`\triangleright`$ Settings $`\triangleright`$ Appearance).
 
 <figure id="fig:main" data-latex-placement="ht">
-<img src="images/main.png" />
+<img src="./images/main.png" />
 <figcaption>A load. Left: the input tabs (top) and the drawings
 (bottom). Right: results, measurements and report.</figcaption>
 </figure>

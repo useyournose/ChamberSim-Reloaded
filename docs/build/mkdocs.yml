@@ -21,10 +21,10 @@ nav:
     - Troubleshooting: ug_troubleshooting.md
     - Glossary: ug_glossary.md
   - Data Sources: DATA_SOURCES.md
-  - Accuracy: accuracy.md
-  - Solver: solver.md
-  - Cheatsheet: cheatsheet.md
-  - Contributing: contributing.md
+  - Accuracy: ACCURACY.md
+  - Solver: SOLVER.md
+  - Cheatsheet: CHEATSHEET.md
+  - Contributing: CONTRIBUTING.md
 
 
 theme:

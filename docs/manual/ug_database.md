@@ -7,7 +7,7 @@ Propellants that are available for loads. The filter field searches all
 columns; click a column header to sort.
 
 <figure id="fig:database" data-latex-placement="ht">
-<img src="images/database.png" />
+<img src="./images/database.png" />
 <figcaption>The Database tab.</figcaption>
 </figure>
 
