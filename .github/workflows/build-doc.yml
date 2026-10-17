@@ -3,7 +3,8 @@ name: Build Documentation
 on:
   push:
     branches:
-      - uyn-mdoku-neverdothisagain
+      - uyn-mdoku
+  workflow_dispatch:
 
 jobs:
   pandoc:
@@ -21,11 +22,17 @@ jobs:
       - name: Build documentation
         working-directory: docs/manual
         run: |
-          pandoc manual.tex -s -o manual.md
+          pandoc manual.tex \
+            --standalone \
+            --to=markdown+pipe_tables \
+            --lua-filter=mkdocs.lua \
+            --output=manual.md
 
       - name: upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 ##v7.0.2
         with:
-          path: docs/manual/manual.md
+          path: |
+            docs/manual/manual.md
+            docs/manual/images/
       
      
