@@ -20,13 +20,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 ##v7.0.1
         
       - name: Build documentation
-        working-directory: docs/manual
+        working-directory: docs
         run: |
-          pandoc manual.tex \
+          pandoc manual/manual.tex \
             --standalone \
             --to=gfm \
             --lua-filter=build/mkdocs.lua \
-            --output=manual.md
+            --output=manual/manual.md
 
       - name: Split manual into sections
         run: python3 docs/manual/build/split_manual.py
