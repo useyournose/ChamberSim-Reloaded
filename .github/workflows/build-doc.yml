@@ -29,7 +29,8 @@ jobs:
             --output=manual/manual.md
 
       - name: Split manual into sections
-        run: python3 docs/build/split_manual.py
+        working-directory: docs
+        run: python3 build/split_manual.py
 
       - name: upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 ##v7.0.2
