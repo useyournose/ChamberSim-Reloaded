@@ -6,7 +6,6 @@ ChamberSim Reloaded
 ![image](images/logo.png)
 
 !!! warning inline end
-
   The results of this program are *calculated*. They can differ
   considerably from reality. Compare every load with the current loading
   tables of the component manufacturers and start low. The software is
