@@ -14,6 +14,7 @@ theme:
     - navigation.expand
     - toc.integrate
     - toc.follow
+    - navigation.footer
   logo: images/logo.png
 
 markdown_extensions:
@@ -34,3 +35,8 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Schildkroet
