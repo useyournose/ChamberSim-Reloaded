@@ -6,16 +6,15 @@ site_description: a short description of your website
 nav:
   - User Guide: index.md
 
-features:
-  - navigation.sections
-  - navigation.expand
-  - toc.follow
-
 theme:
-  name: readthedocs
+  name: material 
   highlightjs: true
   hljs_languages:
     - yaml
+  features:
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
 
 markdown_extensions:
   - admonition
