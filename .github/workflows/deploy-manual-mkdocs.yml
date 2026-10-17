@@ -57,6 +57,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Convert GFM alerts for MkDocs
+        run: python docs/build/gfm_to_mkdocs.py docs/build/docs
+
       - name: lint md
         uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff #v24.2.0
         with:

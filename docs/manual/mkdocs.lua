@@ -14,7 +14,7 @@ end
 
 function Table(table)
   return pandoc.RawBlock(
-    "markdown",
+    "gfm",
     pandoc.write(pandoc.Pandoc({table}), "gfm")
   )
 end
@@ -35,11 +35,15 @@ end
 function Div(div)
   for class, title in pairs(admonition_titles) do
     if div.classes:includes(class) then
-      local markdown = pandoc.write(pandoc.Pandoc(div.content), "markdown")
-      local indented = markdown:gsub("([^\n]+)", "    %1")
+      local gfm = pandoc.write(pandoc.Pandoc(div.content), "gfm")
+      local quoted_lines = {}
+      local content = gfm:gsub("\n+$", "")
+      for line in (content .. "\n"):gmatch("(.-)\n") do
+        quoted_lines[#quoted_lines + 1] = "> " .. line
+      end
       return pandoc.RawBlock(
-        "markdown",
-        '!!! ' .. class .. ' "' .. title .. '"\n\n' .. indented
+        "gfm",
+        "> [!" .. class:upper() .. "]\n" .. table.concat(quoted_lines, "\n")
       )
     end
   end
