@@ -28,7 +28,7 @@ the chart to read the values at that point.
 
 ## Burn-rate chart
 
-The smaller chart shows the burn rate $`B_a\cdot\varphi(z)`$ over the
+The smaller chart shows the burn rate $B_a\cdot\varphi(z)$ over the
 burnt fraction.
 
 ## Reference overlay

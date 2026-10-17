@@ -23,8 +23,8 @@ Remove charge
 removes the selected charge with all its shots.
 
 The table has one row per charge: name, charge, number of shots, mean
-velocity, SD, ES, the simulated velocity and the difference
-($`\Delta`$), then the same for the peak pressure.
+velocity, SD, ES, the simulated velocity and the difference ($\Delta$),
+then the same for the peak pressure.
 
 ## Shots
 
@@ -65,9 +65,9 @@ simulation agrees with your data.
     bullet weights or calibers.
 
 3.  **Open the dialog** and choose the *values to fit*. The default
-    depends on the data: $`B_a`$ alone for fewer than 3 charges, $`B_a`$
-    and $`a_0`$ for 3 to 5, all four ($`B_a`$, $`a_0`$, $`z_1`$,
-    $`z_2`$) for 6 or more charges from at least two load files.
+    depends on the data: $B_a$ alone for fewer than 3 charges, $B_a$ and
+    $a_0$ for 3 to 5, all four ($B_a$, $a_0$, $z_1$, $z_2$) for 6 or
+    more charges from at least two load files.
 
 4.  Click Fit. The dialog lists velocity and pressure of every charge
     before and after the fit and the rms error. Read the warnings (for

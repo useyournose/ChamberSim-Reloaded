@@ -25,7 +25,7 @@ narrow the list. The Initial Gas Pressure is the pressure at which the
 bullet starts to move and engraves. The Bullet friction is an extra
 resistance in bar that acts all along the barrel; it is always applied.
 Negative values are possible and describe low-friction bullets (the
-original’s database has values down to $`-100`$ bar). For 362 rifle
+original’s database has values down to $-100$ bar). For 362 rifle
 bullets the project records carry start pressure and friction values
 fitted to published loads. A load keeps the values it was made with
 until you select the bullet again.
@@ -81,5 +81,5 @@ a load as follows:
 The load also has the choices Shotshell Hull, Shotshell Wad and
 Shotshell Primer, each with three groups of similar parts (low, medium
 and high pressure). They change the pressure by up to about
-$`\pm 20\,\%`$. Shotgun results are less reliable than rifle and handgun
+$\pm 20\,\%$. Shotgun results are less reliable than rifle and handgun
 results.

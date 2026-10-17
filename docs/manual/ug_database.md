@@ -80,8 +80,7 @@ asking), `-c` (only report what is found and missing, change nothing),
 
 2.  Double-click `grt_decrypt_db.cmd`. After asking, it installs Python
     (with `winget`) and the Python package `frida` into a private
-    environment under
-    `%LOCALAPPDATA%`$`\backslash`$`ChamberSimReloaded`.
+    environment under `%LOCALAPPDATA%`$\backslash$`ChamberSimReloaded`.
 
 3.  When it has finished, `GordonsReloadingTool.plain.db` is in the same
     folder.

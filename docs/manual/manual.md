@@ -90,10 +90,10 @@ contain the current accuracy tables.
 Release builds are available from the project’s GitHub page: an AppImage
 for Linux and a zip file for Windows. Unpack or make the AppImage
 executable and start it; no installation is needed. Both contain this
-manual (**Help** $`\triangleright`$ User manual, F1); the Windows zip
-also contains the Visual C++ runtime, so nothing else has to be
-installed. To build the program yourself you need Qt 6.4 or newer, CMake
-3.16 or newer and a C++20 compiler:
+manual (**Help** → User manual, F1); the Windows zip also contains the
+Visual C++ runtime, so nothing else has to be installed. To build the
+program yourself you need Qt 6.4 or newer, CMake 3.16 or newer and a
+C++20 compiler:
 
     tools/build.sh release
     build/release/ChamberSimReloaded
@@ -156,7 +156,7 @@ for a usage or file error.
 The window has a menu bar and, below it, a row of tabs. The first tab,
 Database, is always present; every open load gets a tab of its own. On
 Linux the program draws its own title bar with the menu in the title row
-(**File** $`\triangleright`$ Settings $`\triangleright`$ Appearance).
+(**File** → Settings → Appearance).
 
 <figure id="fig:main" data-latex-placement="ht">
 <img src="images/main.png" />
@@ -223,8 +223,7 @@ column:
     converted to a plain copy
     (Section <a href="#sec:dump" data-reference-type="ref"
     data-reference="sec:dump">4.2</a>); choose that copy in
-    **File** $`\triangleright`$ Settings $`\triangleright`$ Database. It
-    is only read, never changed.
+    **File** → Settings → Database. It is only read, never changed.
 
 ## Using the original’s database
 
@@ -276,8 +275,7 @@ asking), `-c` (only report what is found and missing, change nothing),
 
 2.  Double-click `grt_decrypt_db.cmd`. After asking, it installs Python
     (with `winget`) and the Python package `frida` into a private
-    environment under
-    `%LOCALAPPDATA%`$`\backslash`$`ChamberSimReloaded`.
+    environment under `%LOCALAPPDATA%`$\backslash$`ChamberSimReloaded`.
 
 3.  When it has finished, `GordonsReloadingTool.plain.db` is in the same
     folder.
@@ -287,12 +285,12 @@ only) and `-Timeout SECONDS`.
 
 ### Using the copy.
 
-Open **File** $`\triangleright`$ Settings $`\triangleright`$ Database,
-choose `GordonsReloadingTool.plain.db` as the Original database. The
-status line at the bottom then shows the file name and the number of
-calibers, projectiles and propellants, and the records appear in the
-Database tab with the source Original GRT. They are read-only; to change
-one, make a copy. You can also start the program with
+Open **File** → Settings → Database, choose
+`GordonsReloadingTool.plain.db` as the Original database. The status
+line at the bottom then shows the file name and the number of calibers,
+projectiles and propellants, and the records appear in the Database tab
+with the source Original GRT. They are read-only; to change one, make a
+copy. You can also start the program with
 `-d GordonsReloadingTool.plain.db`.
 
 > [!NOTE]
@@ -329,8 +327,7 @@ For propellants you can attach an overview photo and a detail photo
 
 ## New load
 
-**File** $`\triangleright`$ New load… (Ctrl+N) opens a dialog with two
-steps.
+**File** → New load… (Ctrl+N) opens a dialog with two steps.
 
 ### Step 1: choose the components.
 
@@ -361,28 +358,27 @@ until you save it.
 
 ## Opening loads
 
-**File** $`\triangleright`$ Open load… (Ctrl+O) opens one or several
-files at once; you can also give files on the command line. Each load
-gets its own tab, named after the file. The file dialog offers three
-filters: all loads, `.csrload` only, and the original’s `.grtload` only.
+**File** → Open load… (Ctrl+O) opens one or several files at once; you
+can also give files on the command line. Each load gets its own tab,
+named after the file. The file dialog offers three filters: all loads,
+`.csrload` only, and the original’s `.grtload` only.
 
 - A load that is already open is not opened twice; its tab is shown
   instead.
 
-- **File** $`\triangleright`$ Open recent lists the last 12 loads. An
-  entry whose file has disappeared or cannot be read is removed from the
-  list.
+- **File** → Open recent lists the last 12 loads. An entry whose file
+  has disappeared or cannot be read is removed from the list.
 
 - If a file cannot be read, a message names the file and the reason.
 
 ## Saving loads
 
 A tab with unsaved changes shows an asterisk after its name.
-**File** $`\triangleright`$ Save (Ctrl+S) writes the load to its file; a
-new load (“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name.
-If you leave out the extension, `.csrload` is added. When you close a
-tab or quit with unsaved changes the program asks whether to Save,
-Discard or Cancel.
+**File** → Save (Ctrl+S) writes the load to its file; a new load
+(“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name. If you
+leave out the extension, `.csrload` is added. When you close a tab or
+quit with unsaved changes the program asks whether to Save, Discard or
+Cancel.
 
 ## The two file formats
 
@@ -433,10 +429,9 @@ unchanged when you save.
 
 ## Undo and redo
 
-Every load remembers its last 100 edits.
-**Edit** $`\triangleright`$ Undo (Ctrl+Z) takes back the last edit and
-**Edit** $`\triangleright`$ Redo (Ctrl+Shift+Z or Ctrl+Y) restores it
-again. The menu entries name the edit, for example Undo Select
+Every load remembers its last 100 edits. **Edit** → Undo (Ctrl+Z) takes
+back the last edit and **Edit** → Redo (Ctrl+Shift+Z or Ctrl+Y) restores
+it again. The menu entries name the edit, for example Undo Select
 Propellant. The following edits are recorded:
 
 - changing a value in the property tables;
@@ -458,11 +453,10 @@ be undone.
 ## Sessions
 
 The program remembers the loads that were open when you quit (only those
-that have a file). With
-**File** $`\triangleright`$ Settings $`\triangleright`$ Start-up $`\triangleright`$ 
-Open the loads of the last session at start they are opened again at the
-next start, and the tab that was shown is selected again. Files that no
-longer exist are skipped.
+that have a file). With **File** → Settings → Start-up →  Open the loads
+of the last session at start they are opened again at the next start,
+and the tab that was shown is selected again. Files that no longer exist
+are skipped.
 
 ## Tips
 
@@ -502,7 +496,7 @@ narrow the list. The Initial Gas Pressure is the pressure at which the
 bullet starts to move and engraves. The Bullet friction is an extra
 resistance in bar that acts all along the barrel; it is always applied.
 Negative values are possible and describe low-friction bullets (the
-original’s database has values down to $`-100`$ bar). For 362 rifle
+original’s database has values down to $-100$ bar). For 362 rifle
 bullets the project records carry start pressure and friction values
 fitted to published loads. A load keeps the values it was made with
 until you select the bullet again.
@@ -558,7 +552,7 @@ a load as follows:
 The load also has the choices Shotshell Hull, Shotshell Wad and
 Shotshell Primer, each with three groups of similar parts (low, medium
 and high pressure). They change the pressure by up to about
-$`\pm 20\,\%`$. Shotgun results are less reliable than rifle and handgun
+$\pm 20\,\%$. Shotgun results are less reliable than rifle and handgun
 results.
 
 # Results
@@ -591,15 +585,15 @@ the chart to read the values at that point.
 
 ## Burn-rate chart
 
-The smaller chart shows the burn rate $`B_a\cdot\varphi(z)`$ over the
+The smaller chart shows the burn rate $B_a\cdot\varphi(z)$ over the
 burnt fraction.
 
 ## Reference overlay
 
-**File** $`\triangleright`$ Overlay reference result… (Ctrl+R) draws a
-saved result (a JSON file, for example from a run of the original
-program) as dashed curves over the chart of the shown load, for
-comparison. Clear reference overlay removes it.
+**File** → Overlay reference result… (Ctrl+R) draws a saved result (a
+JSON file, for example from a run of the original program) as dashed
+curves over the chart of the shown load, for comparison. Clear reference
+overlay removes it.
 
 ## Load development ladder
 
@@ -612,8 +606,7 @@ the steps; click one to display its curve.
 
 ## Choosing the solver model
 
-In **File** $`\triangleright`$ Settings $`\triangleright`$ Solver you
-select the model:
+In **File** → Settings → Solver you select the model:
 
 Physical Model  
 (default) A time-integrated model with flame spread, engraving,
@@ -669,8 +662,8 @@ Remove charge
 removes the selected charge with all its shots.
 
 The table has one row per charge: name, charge, number of shots, mean
-velocity, SD, ES, the simulated velocity and the difference
-($`\Delta`$), then the same for the peak pressure.
+velocity, SD, ES, the simulated velocity and the difference ($\Delta$),
+then the same for the peak pressure.
 
 ## Shots
 
@@ -711,9 +704,9 @@ simulation agrees with your data.
     bullet weights or calibers.
 
 3.  **Open the dialog** and choose the *values to fit*. The default
-    depends on the data: $`B_a`$ alone for fewer than 3 charges, $`B_a`$
-    and $`a_0`$ for 3 to 5, all four ($`B_a`$, $`a_0`$, $`z_1`$,
-    $`z_2`$) for 6 or more charges from at least two load files.
+    depends on the data: $B_a$ alone for fewer than 3 charges, $B_a$ and
+    $a_0$ for 3 to 5, all four ($B_a$, $a_0$, $z_1$, $z_2$) for 6 or
+    more charges from at least two load files.
 
 4.  Click Fit. The dialog lists velocity and pressure of every charge
     before and after the fit and the rms error. Read the warnings (for
@@ -733,9 +726,9 @@ simulation agrees with your data.
 
 The Report tab shows a formatted report of the load
 (Figure <a href="#fig:report" data-reference-type="ref"
-data-reference="fig:report">4</a>). With
-**File** $`\triangleright`$ Print preview…, Print… and Export report as
-PDF… you output it. The report scale is adjustable.
+data-reference="fig:report">4</a>). With **File** → Print preview…,
+Print… and Export report as PDF… you output it. The report scale is
+adjustable.
 
 <figure id="fig:report" data-latex-placement="ht">
 <img src="images/report.png" />
@@ -755,20 +748,19 @@ series.
 
 ## Burn rate table
 
-**Tools** $`\triangleright`$ Burn rate table… compares propellants by
-burn rate, brisance ($`B_r`$), progressivity ($`B_p`$) and the combined
-value ($`B_{rp}`$). These factors are derived from the powder’s $`B_a`$,
-explosion heat, $`k`$ and the form-function values; the solver does not
-use them.
+**Tools** → Burn rate table… compares propellants by burn rate, brisance
+($B_r$), progressivity ($B_p$) and the combined value ($B_{rp}$). These
+factors are derived from the powder’s $B_a$, explosion heat, $k$ and the
+form-function values; the solver does not use them.
 
 ## Unit converter
 
-**Tools** $`\triangleright`$ Unit converter… converts between the units
-of the common quantities, for example grains and grams or bar and psi.
+**Tools** → Unit converter… converts between the units of the common
+quantities, for example grains and grams or bar and psi.
 
 # Settings
 
-**File** $`\triangleright`$ Settings… (Ctrl+,) has these groups:
+**File** → Settings… (Ctrl+,) has these groups:
 
 Database  
 The location of the original’s *plain* database (see
@@ -789,8 +781,8 @@ The Font size (with a button for the system default), Custom Title Bar
 (Linux: the program’s own title bar with the menu in the title row) and
 Rounded Dialog Corners (dialogs have their own frame with the custom
 title bar; this needs a compositing window manager and applies to
-dialogs opened afterwards). The theme is chosen in
-**View** $`\triangleright`$ Theme, not here.
+dialogs opened afterwards). The theme is chosen in **View** → Theme, not
+here.
 
 Start-up  
 Open the loads of the last session at start. Not used when load files
@@ -807,8 +799,7 @@ and closes it, and Cancel also takes back what Apply did.
 
 “No original database” in the status line.  
 No plain copy of the original’s database has been chosen. The project’s
-records still work. Choose one in
-**File** $`\triangleright`$ Settings $`\triangleright`$ Database if you
+records still work. Choose one in **File** → Settings → Database if you
 want the original’s records.
 
 Encrypted database error.  
@@ -838,12 +829,12 @@ Set the log level to Debug and look at the log file.
 
 | Term | Meaning |
 |:---|:---|
-| $`B_a`$ | Burn rate (vivacity) of the powder |
-| $`a_0, z_1, z_2`$ | Form-function values: the shape of the powder grain and the transitions of its burning |
-| $`Q_{ex}`$ | Explosion heat (energy content) of the powder |
-| $`k`$ | Ratio of the specific heats of the powder gases |
+| $B_a$ | Burn rate (vivacity) of the powder |
+| $a_0, z_1, z_2$ | Form-function values: the shape of the powder grain and the transitions of its burning |
+| $Q_{ex}$ | Explosion heat (energy content) of the powder |
+| $k$ | Ratio of the specific heats of the powder gases |
 | BT | Barrel time: time for the bullet to reach the muzzle |
 | SD / ES | Standard deviation and extreme spread of the velocity |
 | Load ratio | Fraction of the case that the powder fills (loading density) |
 | C.I.P. | Commission Internationale Permanente, which standardizes cartridge and chamber dimensions |
-| $`P_{max}`$ | Maximum permitted pressure |
+| $P_{max}$ | Maximum permitted pressure |
