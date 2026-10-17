@@ -5,6 +5,7 @@ from pathlib import Path
 
 ALERT = re.compile(r"^> \[!(NOTE|WARNING)\]\s*$")
 ADMONITION_TITLES = {"NOTE": ("note", "Note"), "WARNING": ("warning", "Safety")}
+IMAGE_SRC = re.compile(r'(<img\b[^>]*?\bsrc=["\'])(?:\./)?images/', re.IGNORECASE)
 
 
 def convert_alerts(markdown: str) -> str:
@@ -35,10 +36,14 @@ def convert_alerts(markdown: str) -> str:
     return result + ("\n" if markdown.endswith(("\n", "\r")) else "")
 
 
+def fix_image_paths(markdown: str) -> str:
+    return IMAGE_SRC.sub(r"\1../images/", markdown)
+
+
 def main() -> None:
     for path in Path(sys.argv[1]).rglob("*.md"):
         original = path.read_text(encoding="utf-8")
-        converted = convert_alerts(original)
+        converted = fix_image_paths(convert_alerts(original))
         if converted != original:
             path.write_text(converted, encoding="utf-8", newline="\n")
 
