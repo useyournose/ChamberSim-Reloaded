@@ -35,7 +35,7 @@ jobs:
         with:
           sparse-checkout: |
             docs/manual/images
-            docs/manual/manual.md
+            docs/manual/*.md
             docs/build
 
       - name: Setup Pages
