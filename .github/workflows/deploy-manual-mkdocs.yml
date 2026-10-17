@@ -42,7 +42,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d #v6.0.0
 
-      - name: prepare manual for mkdocs
+      - name: prepare fodlers for mkdocs
         shell: bash
         working-directory: docs
         run: |
@@ -56,11 +56,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install MkDocs
+      - name: Install requirements
         shell: bash
         working-directory: docs/build
         run: |
           pip install -r requirements.txt
+
+      - name: prep playwright
+        shell: bash
+        working-directory: docs/build
+        run: |
+          playwright install
 
       - name: Build site
         shell: bash
