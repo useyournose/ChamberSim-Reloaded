@@ -56,7 +56,7 @@ def split_sections(markdown: str) -> dict[str, str]:
 
 
 def main() -> int:
-    manual_dir = Path(__file__).resolve().parent
+    manual_dir = Path(__file__).resolve().parent.parent
     source = manual_dir / "manual.md"
 
     try:
