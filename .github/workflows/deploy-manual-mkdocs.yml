@@ -47,10 +47,11 @@ jobs:
         run: |
           mkdir -p build/docs
           mv manual/*.md build/docs/
+          mv *.md build/docs/
           mv manual/images build/docs/
           mv build/javascripts build/docs/
           ### when docs are split up, this needs to go.
-          mv -f build/docs/manual.md build/docs/index.md
+          ##mv -f build/docs/manual.md build/docs/index.md
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 #v7.0.0

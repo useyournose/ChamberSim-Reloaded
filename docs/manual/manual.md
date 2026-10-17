@@ -3,25 +3,24 @@ date: |
   Manual version 1.2\
   for ChamberSim Reloaded version 0.3
 title: |
-  ![image](images/logo.png){width="3.5cm"}\
+  <img src="images/logo.png" style="width:3.5cm" alt="image" />\
   **ChamberSim Reloaded**\
   Interior ballistics for handloaders\
   User Manual
 ---
 
-!!! warning "Safety"
-
-    The results of this program are *calculated*. They can differ
-    considerably from reality. Compare every load with the current loading
-    tables of the component manufacturers and start low. The software is
-    provided "as is", without warranty of any kind. The author and all
-    contributors accept no responsibility or liability for any damage,
-    injury or death or any other consequence of using this software or its
-    results, including damage to firearms or property. Reloading ammunition
-    is dangerous and is done entirely at your own responsibility.
+> [!WARNING]
+> The results of this program are *calculated*. They can differ
+> considerably from reality. Compare every load with the current loading
+> tables of the component manufacturers and start low. The software is
+> provided “as is”, without warranty of any kind. The author and all
+> contributors accept no responsibility or liability for any damage,
+> injury or death or any other consequence of using this software or its
+> results, including damage to firearms or property. Reloading ammunition
+> is dangerous and is done entirely at your own responsibility.
 
 *ChamberSim Reloaded is an independent project. It is not affiliated
-with, endorsed or supported by Gordon's Reloading Tool or its author.*
+with, endorsed or supported by Gordon’s Reloading Tool or its author.*
 
 # Introduction
 
@@ -33,8 +32,8 @@ that it reports the maximum pressure, the muzzle velocity, the barrel
 time and many related values. A load development ladder, charts, reports
 and printouts help to plan a series of test loads.
 
-It follows the workflow of *Gordon's Reloading Tool* (GRT). It can open
-the original's `.grtload` files and can use the original's database, but
+It follows the workflow of *Gordon’s Reloading Tool* (GRT). It can open
+the original’s `.grtload` files and can use the original’s database, but
 stores its own loads in the `.csrload` format.
 
 ## What the program can do
@@ -47,11 +46,11 @@ stores its own loads in the `.csrload` format.
 
 - Drawings of the cartridge and the chamber with the C.I.P. dimensions.
 
-- A [Measurements]{.sans-serif} tab for chronograph and pressure data,
-  with statistics (mean, SD, ES) and a comparison with the simulation.
+- A Measurements tab for chronograph and pressure data, with statistics
+  (mean, SD, ES) and a comparison with the simulation.
 
-- [Fit to measurements]{.sans-serif}: adapts the model values of a
-  powder to your own data.
+- Fit to measurements: adapts the model values of a powder to your own
+  data.
 
 - Reports with a template editor, print preview and PDF export.
 
@@ -64,9 +63,9 @@ stores its own loads in the `.csrload` format.
 
 The default *Physical Model* is fitted to published load data of powder
 manufacturers. Against loads that were left out of the fit, the muzzle
-velocity is typically within 3--6 % (root mean square; Vihtavuori
-powders about 3 %, Hodgdon about 6 %) and the peak pressure within about
-15 % where the tables publish it. The scatter of the published tables
+velocity is typically within 3–6 % (root mean square; Vihtavuori powders
+about 3 %, Hodgdon about 6 %) and the peak pressure within about 15 %
+where the tables publish it. The scatter of the published tables
 themselves (lots, barrels, components) is of that size. Single loads can
 deviate much more. Unusual loads, other powders and other cartridges
 than the ones tested can deviate more again; slow powders at low
@@ -74,40 +73,37 @@ pressure, pistol and revolver cartridges (about 8 % in velocity and 19 %
 in pressure) and shotgun loads (about 3 % in velocity and 16 % in
 pressure, with their own constants) are known weak spots. Powders
 without physical burn values, such as your own records, are less
-accurate than the project's powders. The [GRT Original]{.sans-serif}
-model reproduces the results of the original program to about 1 % in
-velocity and 3 % in pressure. The files `README.md` and
-`docs/ACCURACY.md` of the project contain the current accuracy tables.
+accurate than the project’s powders. The GRT Original model reproduces
+the results of the original program to about 1 % in velocity and 3 % in
+pressure. The files `README.md` and `docs/ACCURACY.md` of the project
+contain the current accuracy tables.
 
-!!! warning "Safety"
-
-    Never use a calculated load without checking it against the
-    manufacturer's data. Work up from a safe starting charge and watch for
-    signs of excessive pressure.
+> [!WARNING]
+> Never use a calculated load without checking it against the
+> manufacturer’s data. Work up from a safe starting charge and watch for
+> signs of excessive pressure.
 
 # Installation and first start
 
 ## Installing
 
-Release builds are available from the project's GitHub page: an AppImage
+Release builds are available from the project’s GitHub page: an AppImage
 for Linux and a zip file for Windows. Unpack or make the AppImage
 executable and start it; no installation is needed. Both contain this
-manual ([**Help**]{.sans-serif} $\triangleright$ [User
-manual]{.sans-serif}, F1); the Windows zip also contains the Visual C++
-runtime, so nothing else has to be installed. To build the program
-yourself you need Qt 6.4 or newer, CMake 3.16 or newer and a C++20
-compiler:
+manual (**Help** $`\triangleright`$ User manual, F1); the Windows zip
+also contains the Visual C++ runtime, so nothing else has to be
+installed. To build the program yourself you need Qt 6.4 or newer, CMake
+3.16 or newer and a C++20 compiler:
 
     tools/build.sh release
     build/release/ChamberSimReloaded
 
 ## Safety notice
 
-At every start a safety notice is shown. Read it, then choose [I
-understand]{.sans-serif}; [Quit]{.sans-serif} closes the program. With
-[Do not show this again]{.sans-serif} ticked, [I
-understand]{.sans-serif} also switches the notice off for later starts.
-There is no entry in the settings to bring it back.
+At every start a safety notice is shown. Read it, then choose I
+understand; Quit closes the program. With Do not show this again ticked,
+I understand also switches the notice off for later starts. There is no
+entry in the settings to bring it back.
 
 ## Command-line options
 
@@ -127,7 +123,7 @@ choices in the settings. `--screenshot` saves an image of the window and
 exits (for documentation; see `--help` for `--tab`, `--input-tab` and
 `--result-tab`).
 
-## Simulating without the window {#sec:csrsim}
+## Simulating without the window
 
 The program `csr_sim` runs simulations without a graphical interface,
 for scripts and batch jobs. It reads `.csrload` and `.grtload` files and
@@ -145,7 +141,7 @@ prints one row per load and ladder step.
                             {name} is replaced by the load's file name
       --steps <n>           position steps of the solver (default 2000)
 
-The program's project data (physical burn values of the powders and the
+The program’s project data (physical burn values of the powders and the
 factors of the pistol and revolver calibers) are built in, so the
 results equal those of the program. Each row holds the charge, maximum
 and muzzle pressure, muzzle velocity, energy and time, burnt fraction,
@@ -158,10 +154,9 @@ for a usage or file error.
 # The main window
 
 The window has a menu bar and, below it, a row of tabs. The first tab,
-[Database]{.sans-serif}, is always present; every open load gets a tab
-of its own. On Linux the program draws its own title bar with the menu
-in the title row
-([**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Appearance]{.sans-serif}).
+Database, is always present; every open load gets a tab of its own. On
+Linux the program draws its own title bar with the menu in the title row
+(**File** $`\triangleright`$ Settings $`\triangleright`$ Appearance).
 
 <figure id="fig:main" data-latex-placement="ht">
 <img src="images/main.png" />
@@ -171,27 +166,26 @@ in the title row
 
 ## Menus
 
-::: description
-[New load...]{.sans-serif} (Ctrl+N), [Open load...]{.sans-serif}
-(Ctrl+O), [Open recent]{.sans-serif}, [Save]{.sans-serif} (Ctrl+S),
-[Save as...]{.sans-serif}, [Print preview...]{.sans-serif},
-[Print...]{.sans-serif} (Ctrl+P), [Export report as
-PDF...]{.sans-serif}, [Overlay reference result...]{.sans-serif}
-(Ctrl+R), [Clear reference overlay]{.sans-serif},
-[Settings...]{.sans-serif} (Ctrl+,) and [Quit]{.sans-serif}.
+<div class="description">
 
-[Undo]{.sans-serif} (Ctrl+Z) and [Redo]{.sans-serif} (Ctrl+Shift+Z or
-Ctrl+Y) for the load that is shown; see
-Section [5.6](#sec:undo){reference-type="ref" reference="sec:undo"}.
+New load… (Ctrl+N), Open load… (Ctrl+O), Open recent, Save (Ctrl+S),
+Save as…, Print preview…, Print… (Ctrl+P), Export report as PDF…,
+Overlay reference result… (Ctrl+R), Clear reference overlay, Settings…
+(Ctrl+,) and Quit.
 
-[Theme]{.sans-serif} (system default, light, dark) and
-[Language]{.sans-serif}. A language change takes effect after a restart.
+Undo (Ctrl+Z) and Redo (Ctrl+Shift+Z or Ctrl+Y) for the load that is
+shown; see Section <a href="#sec:undo" data-reference-type="ref"
+data-reference="sec:undo">5.6</a>.
 
-[Burn rate table...]{.sans-serif} and [Unit converter...]{.sans-serif}.
+Theme (system default, light, dark) and Language. A language change
+takes effect after a restart.
 
-[User manual]{.sans-serif} (F1), which opens this manual as a PDF, and
-[About ChamberSim Reloaded...]{.sans-serif}
-:::
+Burn rate table… and Unit converter….
+
+User manual (F1), which opens this manual as a PDF, and About ChamberSim
+Reloaded…
+
+</div>
 
 ## Layout
 
@@ -199,24 +193,23 @@ The panels are separated by splitters (the small dotted handles) that
 you can drag. The program remembers the splitter positions, the column
 widths of the property tables and the window geometry.
 
-# The database {#sec:db}
+# The database
 
-The [Database]{.sans-serif} tab
-(Figure [2](#fig:database){reference-type="ref"
-reference="fig:database"}) lists the [Calibers]{.sans-serif},
-[Projectiles]{.sans-serif} and [Propellants]{.sans-serif} that are
-available for loads. The filter field searches all columns; click a
-column header to sort.
+The Database tab
+(Figure <a href="#fig:database" data-reference-type="ref"
+data-reference="fig:database">2</a>) lists the Calibers, Projectiles and
+Propellants that are available for loads. The filter field searches all
+columns; click a column header to sort.
 
 <figure id="fig:database" data-latex-placement="ht">
 <img src="images/database.png" />
 <figcaption>The Database tab.</figcaption>
 </figure>
 
-## Where the records come from {#sec:sources}
+## Where the records come from
 
-The list is one view made of up to three sources, shown in the
-[Source]{.sans-serif} column:
+The list is one view made of up to three sources, shown in the Source
+column:
 
 1.  The **project database**: calibers, projectiles and propellants that
     are built into the program.
@@ -225,32 +218,32 @@ The list is one view made of up to three sources, shown in the
     the application data folder. Everything you create or copy is stored
     here.
 
-3.  Optionally the records of **Gordon's Reloading Tool** ([Original
-    GRT]{.sans-serif}). The original's database is encrypted and must
-    first be converted to a plain copy
-    (Section [4.2](#sec:dump){reference-type="ref"
-    reference="sec:dump"}); choose that copy in
-    [**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Database]{.sans-serif}.
-    It is only read, never changed.
+3.  Optionally the records of **Gordon’s Reloading Tool** (Original
+    GRT). The original’s database is encrypted and must first be
+    converted to a plain copy
+    (Section <a href="#sec:dump" data-reference-type="ref"
+    data-reference="sec:dump">4.2</a>); choose that copy in
+    **File** $`\triangleright`$ Settings $`\triangleright`$ Database. It
+    is only read, never changed.
 
-## Using the original's database {#sec:dump}
+## Using the original’s database
 
-Gordon's Reloading Tool keeps its calibers, projectiles and propellants
+Gordon’s Reloading Tool keeps its calibers, projectiles and propellants
 in an encrypted SQLite database (`GordonsReloadingTool.db`). ChamberSim
 Reloaded does not decrypt it by itself and does not ship one. A helper
 script makes a *plain* (unencrypted) *copy* that you then choose in the
 settings. The program and its database stay unchanged; only the copy is
-converted. You need your own installation of Gordon's Reloading Tool.
+converted. You need your own installation of Gordon’s Reloading Tool.
 
-#### How it works.
+### How it works.
 
 The script starts a scratch copy of the original program. As soon as the
 original has unlocked its database, the script asks it to remove the
 encryption from that copy. Nothing is compiled and no key is typed in.
 
-#### Linux.
+### Linux.
 
-1.  Unpack the *Linux* version of Gordon's Reloading Tool. Its folder
+1.  Unpack the *Linux* version of Gordon’s Reloading Tool. Its folder
     contains `GordonsReloadingTool`, `libs/` and
     `GordonsReloadingTool.db`.
 
@@ -275,15 +268,16 @@ asking), `-c` (only report what is found and missing, change nothing),
 `--headless` (use a virtual display, no window appears), `-t SECONDS`
 (give up after this time, default 90) and `-h` (help).
 
-#### Windows.
+### Windows.
 
 1.  Copy `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1` into
-    the folder of Gordon's Reloading Tool (next to
+    the folder of Gordon’s Reloading Tool (next to
     `GordonsReloadingTool.exe`).
 
 2.  Double-click `grt_decrypt_db.cmd`. After asking, it installs Python
     (with `winget`) and the Python package `frida` into a private
-    environment under `%LOCALAPPDATA%`$\backslash$`ChamberSimReloaded`.
+    environment under
+    `%LOCALAPPDATA%`$`\backslash`$`ChamberSimReloaded`.
 
 3.  When it has finished, `GordonsReloadingTool.plain.db` is in the same
     folder.
@@ -291,142 +285,128 @@ asking), `-c` (only report what is found and missing, change nothing),
 In PowerShell the options are `-Out FILE`, `-Yes`, `-Check` (report
 only) and `-Timeout SECONDS`.
 
-#### Using the copy.
+### Using the copy.
 
-Open
-[**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Database]{.sans-serif},
-choose `GordonsReloadingTool.plain.db` as the [Original
-database]{.sans-serif}. The status line at the bottom then shows the
-file name and the number of calibers, projectiles and propellants, and
-the records appear in the [Database]{.sans-serif} tab with the source
-[Original GRT]{.sans-serif}. They are read-only; to change one, make a
-copy. You can also start the program with
+Open **File** $`\triangleright`$ Settings $`\triangleright`$ Database,
+choose `GordonsReloadingTool.plain.db` as the Original database. The
+status line at the bottom then shows the file name and the number of
+calibers, projectiles and propellants, and the records appear in the
+Database tab with the source Original GRT. They are read-only; to change
+one, make a copy. You can also start the program with
 `-d GordonsReloadingTool.plain.db`.
 
-!!! note "Note"
-
-    Do not distribute the plain copy. It is for your own use with your own
-    copy of Gordon's Reloading Tool. If the original program is updated,
-    make a new copy.
+> [!NOTE]
+> Do not distribute the plain copy. It is for your own use with your own
+> copy of Gordon’s Reloading Tool. If the original program is updated,
+> make a new copy.
 
 ## Working with records
 
-New...
+New…  
+adds a new record. Fill in the fields; labels show the unit of each
+field.
 
-: adds a new record. Fill in the fields; labels show the unit of each
-  field.
+Copy…  
+adds a changed copy of the selected record. A double click on a record
+shows it and offers the same.
 
-Copy...
+Edit…  
+changes the selected record.
 
-: adds a changed copy of the selected record. A double click on a record
-  shows it and offers the same.
+Delete  
+removes the selected record. Load files that use it keep their values.
 
-Edit...
-
-: changes the selected record.
-
-Delete
-
-: removes the selected record. Load files that use it keep their values.
-
-Export...
-
-: saves the record as a file, to contribute it to the project's
-  database.
+Export…  
+saves the record as a file, to contribute it to the project’s database.
 
 Only your own records can be edited or deleted. To change a project or
 original record, make a copy.
 
 For propellants you can attach an overview photo and a detail photo
-([Choose file...]{.sans-serif}, with the scale in px/mm if you know it).
+(Choose file…, with the scale in px/mm if you know it).
 
-# Making, opening and saving loads {#sec:files}
+# Making, opening and saving loads
 
 ## New load
 
-[**File**]{.sans-serif} $\triangleright$ [New load...]{.sans-serif}
-(Ctrl+N) opens a dialog with two steps.
+**File** $`\triangleright`$ New load… (Ctrl+N) opens a dialog with two
+steps.
 
-#### Step 1: choose the components.
+### Step 1: choose the components.
 
-The tabs [1. Caliber]{.sans-serif}, [2. Projectile]{.sans-serif} and
-[3. Propellant]{.sans-serif} list the records of the database. Select
-one record in each tab; below the lists the dialog shows what you have
-chosen so far. The projectile list can be restricted to bullets that fit
-the caliber ([Show only bullets that fit the caliber]{.sans-serif}).
-[Next \>]{.sans-serif} becomes available when all three components are
+The tabs 1. Caliber, 2. Projectile and 3. Propellant list the records of
+the database. Select one record in each tab; below the lists the dialog
+shows what you have chosen so far. The projectile list can be restricted
+to bullets that fit the caliber (Show only bullets that fit the
+caliber). Next \> becomes available when all three components are
 chosen.
 
-#### Step 2: check the load data.
+### Step 2: check the load data.
 
-The dialog shows the chosen components and the [Load data]{.sans-serif}:
-propellant charge, barrel length, bullet seating depth, twist length and
-propellant temperature. They are filled with defaults for your selection
-(barrel length of the caliber, the cartridge at its maximum length, a
-charge of 70 % of the case capacity) and you can change them freely. The
-charge is also shown in the other mass unit (grams or grains). [Reset to
-defaults]{.sans-serif} restores the defaults.
+The dialog shows the chosen components and the Load data: propellant
+charge, barrel length, bullet seating depth, twist length and propellant
+temperature. They are filled with defaults for your selection (barrel
+length of the caliber, the cartridge at its maximum length, a charge of
+70 % of the case capacity) and you can change them freely. The charge is
+also shown in the other mass unit (grams or grains). Reset to defaults
+restores the defaults.
 
-[\< Back]{.sans-serif} returns to step 1. If you come back to step 2
-with the *same* three components, your changes are kept; if you change
-any component, the load data are filled in again with the defaults of
-the new selection.
+\< Back returns to step 1. If you come back to step 2 with the *same*
+three components, your changes are kept; if you change any component,
+the load data are filled in again with the defaults of the new
+selection.
 
-[Create load]{.sans-serif} opens the new load in its own tab. It is
-called "Untitled" until you save it.
+Create load opens the new load in its own tab. It is called “Untitled”
+until you save it.
 
 ## Opening loads
 
-[**File**]{.sans-serif} $\triangleright$ [Open load...]{.sans-serif}
-(Ctrl+O) opens one or several files at once; you can also give files on
-the command line. Each load gets its own tab, named after the file. The
-file dialog offers three filters: all loads, `.csrload` only, and the
-original's `.grtload` only.
+**File** $`\triangleright`$ Open load… (Ctrl+O) opens one or several
+files at once; you can also give files on the command line. Each load
+gets its own tab, named after the file. The file dialog offers three
+filters: all loads, `.csrload` only, and the original’s `.grtload` only.
 
 - A load that is already open is not opened twice; its tab is shown
   instead.
 
-- [**File**]{.sans-serif} $\triangleright$ [Open recent]{.sans-serif}
-  lists the last 12 loads. An entry whose file has disappeared or cannot
-  be read is removed from the list.
+- **File** $`\triangleright`$ Open recent lists the last 12 loads. An
+  entry whose file has disappeared or cannot be read is removed from the
+  list.
 
 - If a file cannot be read, a message names the file and the reason.
 
 ## Saving loads
 
 A tab with unsaved changes shows an asterisk after its name.
-[**File**]{.sans-serif} $\triangleright$ [Save]{.sans-serif} (Ctrl+S)
-writes the load to its file; a new load ("Untitled") and [Save
-as...]{.sans-serif} (Ctrl+Shift+S) ask for a file name. If you leave out
-the extension, `.csrload` is added. When you close a tab or quit with
-unsaved changes the program asks whether to [Save]{.sans-serif},
-[Discard]{.sans-serif} or [Cancel]{.sans-serif}.
+**File** $`\triangleright`$ Save (Ctrl+S) writes the load to its file; a
+new load (“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name.
+If you leave out the extension, `.csrload` is added. When you close a
+tab or quit with unsaved changes the program asks whether to Save,
+Discard or Cancel.
 
 ## The two file formats
 
-  ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  `.csrload`   The program's own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes.
-  `.grtload`   The format of Gordon's Reloading Tool. It can be opened and, as an export, written.
-  ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  |  |
+|:---|:---|
+| `.csrload` | The program’s own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes. |
+| `.grtload` | The format of Gordon’s Reloading Tool. It can be opened and, as an export, written. |
 
-The format is chosen by the file name's extension.
+The format is chosen by the file name’s extension.
 
-#### Opening an original file.
+### Opening an original file.
 
 A `.grtload` file is read completely, including the measurements, notes
 and pictures of its appendix. Because the program saves only in its own
-format, [Save]{.sans-serif} on such a load works like [Save
-as...]{.sans-serif}: it suggests the same name with the extension
-`.csrload`. The original file is never changed.
+format, Save on such a load works like Save as…: it suggests the same
+name with the extension `.csrload`. The original file is never changed.
 
-#### Exporting for the original program.
+### Exporting for the original program.
 
-In [Save as...]{.sans-serif} choose the filter *Original GRT loads,
-without the data of ChamberSim Reloaded* (or type a name ending in
-`.grtload`). The exported file can be opened in Gordon's Reloading Tool.
-It leaves out what that program does not know: the physical burn values
-and the shotshell part choices. Keep a `.csrload` copy if you do not
-want to lose these.
+In Save as… choose the filter *Original GRT loads, without the data of
+ChamberSim Reloaded* (or type a name ending in `.grtload`). The exported
+file can be opened in Gordon’s Reloading Tool. It leaves out what that
+program does not know: the physical burn values and the shotshell part
+choices. Keep a `.csrload` copy if you do not want to lose these.
 
 ## What a load file contains
 
@@ -442,33 +422,31 @@ references to the database. Consequently:
   record);
 
 - to apply changes of a record to an existing load, select it again in
-  the load ([Select Propellant...]{.sans-serif} and so on); for a powder
-  a banner points out that the load differs from the database, see
-  section [6.3](#sec:propellant){reference-type="ref"
-  reference="sec:propellant"}.
+  the load (Select Propellant… and so on); for a powder a banner points
+  out that the load differs from the database, see
+  section <a href="#sec:propellant" data-reference-type="ref"
+  data-reference="sec:propellant">6.3</a>.
 
 Measurement series, notes and pictures are part of the file as well.
 Parts of an original file that the program does not interpret are kept
 unchanged when you save.
 
-## Undo and redo {#sec:undo}
+## Undo and redo
 
 Every load remembers its last 100 edits.
-[**Edit**]{.sans-serif} $\triangleright$ [Undo]{.sans-serif} (Ctrl+Z)
-takes back the last edit and
-[**Edit**]{.sans-serif} $\triangleright$ [Redo]{.sans-serif}
-(Ctrl+Shift+Z or Ctrl+Y) restores it again. The menu entries name the
-edit, for example [Undo Select Propellant]{.sans-serif}. The following
-edits are recorded:
+**Edit** $`\triangleright`$ Undo (Ctrl+Z) takes back the last edit and
+**Edit** $`\triangleright`$ Redo (Ctrl+Shift+Z or Ctrl+Y) restores it
+again. The menu entries name the edit, for example Undo Select
+Propellant. The following edits are recorded:
 
 - changing a value in the property tables;
 
 - choosing another caliber, projectile or propellant;
 
-- applying the result of [Fit to measurements]{.sans-serif} and
-  accepting the physical burn values of a powder;
+- applying the result of Fit to measurements and accepting the physical
+  burn values of a powder;
 
-- changes in the [Measurements]{.sans-serif} tab.
+- changes in the Measurements tab.
 
 The history belongs to one load and is not saved in the file. It starts
 empty when a load is opened and is kept while the load is saved. If you
@@ -481,19 +459,19 @@ be undone.
 
 The program remembers the loads that were open when you quit (only those
 that have a file). With
-[**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Start-up]{.sans-serif} $\triangleright$ 
-[Open the loads of the last session at start]{.sans-serif} they are
-opened again at the next start, and the tab that was shown is selected
-again. Files that no longer exist are skipped.
+**File** $`\triangleright`$ Settings $`\triangleright`$ Start-up $`\triangleright`$ 
+Open the loads of the last session at start they are opened again at the
+next start, and the tab that was shown is selected again. Files that no
+longer exist are skipped.
 
 ## Tips
 
-- Save a load under a new name before you experiment with it; [Save
-  as...]{.sans-serif} leaves the old file as it is.
+- Save a load under a new name before you experiment with it; Save as…
+  leaves the old file as it is.
 
 - Put the files of one rifle and component set into one folder and use
-  the series of the [Measurements]{.sans-serif} tab for the range
-  sessions, so that a single file holds the history of a load.
+  the series of the Measurements tab for the range sessions, so that a
+  single file holds the history of a load.
 
 - Files are plain XML text and suit version control or backup tools.
 
@@ -504,13 +482,13 @@ the results.
 
 ## Cartridge & gun
 
-Shows the caliber ([Select Caliber...]{.sans-serif} replaces it) and a
-table of properties: designation, overall length, case length, case
-volume, bore, effective area, maximum permitted pressure, barrel length,
-twist length, seating depth and more. Below the table the drawings show
-the cartridge, the chamber and (when available) the powder.
+Shows the caliber (Select Caliber… replaces it) and a table of
+properties: designation, overall length, case length, case volume, bore,
+effective area, maximum permitted pressure, barrel length, twist length,
+seating depth and more. Below the table the drawings show the cartridge,
+the chamber and (when available) the powder.
 
-#### Replacing the caliber.
+### Replacing the caliber.
 
 After you choose another caliber, the program can also set barrel
 length, seating depth and charge to the defaults of the new caliber
@@ -518,93 +496,89 @@ length, seating depth and charge to the defaults of the new caliber
 
 ## Projectile
 
-Mass, diameter, length and the other bullet data. [Select
-Projectile...]{.sans-serif} replaces the bullet; tick [Show only bullets
-that fit the caliber]{.sans-serif} to narrow the list. The [Initial Gas
-Pressure]{.sans-serif} is the pressure at which the bullet starts to
-move and engraves. The [Bullet friction]{.sans-serif} is an extra
+Mass, diameter, length and the other bullet data. Select Projectile…
+replaces the bullet; tick Show only bullets that fit the caliber to
+narrow the list. The Initial Gas Pressure is the pressure at which the
+bullet starts to move and engraves. The Bullet friction is an extra
 resistance in bar that acts all along the barrel; it is always applied.
 Negative values are possible and describe low-friction bullets (the
-original's database has values down to $-100$ bar). For 362 rifle
+original’s database has values down to $`-100`$ bar). For 362 rifle
 bullets the project records carry start pressure and friction values
 fitted to published loads. A load keeps the values it was made with
 until you select the bullet again.
 
-## Propellant {#sec:propellant}
+## Propellant
 
 Powder charge, explosion heat, burn rate and the form-function values.
-[Select Propellant...]{.sans-serif} replaces the powder.
+Select Propellant… replaces the powder.
 
 With the Physical Model, project powders also have *physical burn
 values*. They are kept in the load file. If they are missing, an orange
-banner tells you so and offers [Use the physical
-values...]{.sans-serif}.
+banner tells you so and offers Use the physical values….
 
 A load keeps its own copy of the powder values. If a database record of
 that powder was corrected after the load was made, or you edited the
 values in the load, a second orange banner says *Powder values differ
 from the database*. The load is still calculated with its own values.
-[Use the database values...]{.sans-serif} replaces them with those of
-the closest record (the charge and all other settings stay;
-[Undo]{.sans-serif} takes it back). A powder can have several records,
-so the banner appears only if no record has exactly the values of the
-load. With the Physical Model only the project's records are compared,
-because the original database is not updated; with the other models all
-records count.
+Use the database values… replaces them with those of the closest record
+(the charge and all other settings stay; Undo takes it back). A powder
+can have several records, so the banner appears only if no record has
+exactly the values of the load. With the Physical Model only the
+project’s records are compared, because the original database is not
+updated; with the other models all records count.
 
 ## Editing values
 
 Click a value in a property table to edit it. Values with a unit have a
 drop-down menu for the unit; the choice applies to this field only.
-[Reset per-field units]{.sans-serif} in the settings returns every field
-to the chosen unit system. Some fields are coded values (for example the
-[Shotshell]{.sans-serif} flag) and offer a list of choices.
+Reset per-field units in the settings returns every field to the chosen
+unit system. Some fields are coded values (for example the Shotshell
+flag) and offer a list of choices.
 
 ## Measuring a load
 
-A good [Case Volume]{.sans-serif} is the single most important input
-after the powder. Measure a fired case by filling it with water and
-weighing it. Also measure the real bullet length and cartridge overall
-length and enter the mean values.
+A good Case Volume is the single most important input after the powder.
+Measure a fired case by filling it with water and weighing it. Also
+measure the real bullet length and cartridge overall length and enter
+the mean values.
 
 ## Shotgun loads
 
-Calibers with [Shotshell]{.sans-serif} set to yes use their own model
-terms. Enter such a load as follows:
+Calibers with Shotshell set to yes use their own model terms. Enter such
+a load as follows:
 
-- [Projectile]{.sans-serif}: mass = shot + wad (about 2.5 g for a
-  plastic wad), length = height of the shot column plus the wad,
-  diameter = bore diameter;
+- Projectile: mass = shot + wad (about 2.5 g for a plastic wad), length
+  = height of the shot column plus the wad, diameter = bore diameter;
 
 - seated completely inside the hull: cartridge overall length = hull
   length, seating depth = projectile length;
 
-- [Initial Gas Pressure]{.sans-serif} = crimp release, about 20 bar.
+- Initial Gas Pressure = crimp release, about 20 bar.
 
-The load also has the choices [Shotshell Hull]{.sans-serif}, [Shotshell
-Wad]{.sans-serif} and [Shotshell Primer]{.sans-serif}, each with three
-groups of similar parts (low, medium and high pressure). They change the
-pressure by up to about $\pm 20\,\%$. Shotgun results are less reliable
-than rifle and handgun results.
+The load also has the choices Shotshell Hull, Shotshell Wad and
+Shotshell Primer, each with three groups of similar parts (low, medium
+and high pressure). They change the pressure by up to about
+$`\pm 20\,\%`$. Shotgun results are less reliable than rifle and handgun
+results.
 
 # Results
 
 ## Results tab
 
-The [Results]{.sans-serif} tab shows a summary of the load and the key
-values: maximum pressure, muzzle pressure, projectile energy, muzzle
-velocity, barrel time, burnout pressure, gas outflow velocity,
-projectile speed (revolutions per minute), recoil energy, load ratio,
-the fraction of burnt powder, the effective efficiency and the heat and
-friction loss. The model in use is named above the values.
+The Results tab shows a summary of the load and the key values: maximum
+pressure, muzzle pressure, projectile energy, muzzle velocity, barrel
+time, burnout pressure, gas outflow velocity, projectile speed
+(revolutions per minute), recoil energy, load ratio, the fraction of
+burnt powder, the effective efficiency and the heat and friction loss.
+The model in use is named above the values.
 
 Warnings appear in colored banners: *Above the permitted maximum
 pressure*, *Charge too high* (the charge does not fit into the case
 behind the bullet) and *Invalid input* (the simulation cannot run with
 these values). Two orange notices concern the powder: *No physical burn
 values* and *Powder values differ from the database* (see
-section [6.3](#sec:propellant){reference-type="ref"
-reference="sec:propellant"}).
+section <a href="#sec:propellant" data-reference-type="ref"
+data-reference="sec:propellant">6.3</a>).
 
 ## Chart
 
@@ -617,58 +591,52 @@ the chart to read the values at that point.
 
 ## Burn-rate chart
 
-The smaller chart shows the burn rate $B_a\cdot\varphi(z)$ over the
+The smaller chart shows the burn rate $`B_a\cdot\varphi(z)`$ over the
 burnt fraction.
 
 ## Reference overlay
 
-[**File**]{.sans-serif} $\triangleright$ [Overlay reference
-result...]{.sans-serif} (Ctrl+R) draws a saved result (a JSON file, for
-example from a run of the original program) as dashed curves over the
-chart of the shown load, for comparison. [Clear reference
-overlay]{.sans-serif} removes it.
+**File** $`\triangleright`$ Overlay reference result… (Ctrl+R) draws a
+saved result (a JSON file, for example from a run of the original
+program) as dashed curves over the chart of the shown load, for
+comparison. Clear reference overlay removes it.
 
 ## Load development ladder
 
 With a ladder, the program simulates several charges at once. Set the
-number of steps and the charge difference in the load's ladder fields;
+number of steps and the charge difference in the load’s ladder fields;
 up to ten steps are possible. The selected charge is the maximum, the
 further steps go down from there. A table (charge, maximum pressure,
 velocity, energy and load ratio) and a row of tabs above the chart show
 the steps; click one to display its curve.
 
-## Choosing the solver model {#sec:solver}
+## Choosing the solver model
 
-In
-[**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Solver]{.sans-serif}
-you select the model:
+In **File** $`\triangleright`$ Settings $`\triangleright`$ Solver you
+select the model:
 
-Physical Model
+Physical Model  
+(default) A time-integrated model with flame spread, engraving,
+friction, air, heat loss and spin. It is fitted to published load data
+of the powder manufacturers.
 
-: (default) A time-integrated model with flame spread, engraving,
-  friction, air, heat loss and spin. It is fitted to published load data
-  of the powder manufacturers.
+Published  
+The GRT equations with empirical constants.
 
-Published
-
-: The GRT equations with empirical constants.
-
-GRT Original
-
-: Calibrated against reference runs of the original program.
+GRT Original  
+Calibrated against reference runs of the original program.
 
 The model in use is shown in the results. The three models give
 different numbers; they are not exchangeable.
 
-#### Original GRT files.
+### Original GRT files.
 
-With [Always use GRT Original for original GRT files
-(\*.grtload)]{.sans-serif} a load whose file is a `.grtload` is always
-calculated with GRT Original and the burn values in the file, whatever
-model is selected. Its results are then close to those Gordon's
-Reloading Tool shows for the same file (the results line says [GRT
-Original (original GRT file, ...)]{.sans-serif}). Once the load is saved
-as a `.csrload`, it uses the selected model again.
+With Always use GRT Original for original GRT files (\*.grtload) a load
+whose file is a `.grtload` is always calculated with GRT Original and
+the burn values in the file, whatever model is selected. Its results are
+then close to those Gordon’s Reloading Tool shows for the same file (the
+results line says GRT Original (original GRT file, …)). Once the load is
+saved as a `.csrload`, it uses the selected model again.
 
 <figure data-latex-placement="ht">
 <img src="images/propellant.png" />
@@ -678,9 +646,9 @@ chart.</figcaption>
 
 # Measurements
 
-The [Measurements]{.sans-serif} tab holds your own chronograph and
-pressure data. It is stored in the load file and used to compare the
-real load with the simulation and to fit the powder model.
+The Measurements tab holds your own chronograph and pressure data. It is
+stored in the load file and used to compare the real load with the
+simulation and to fit the powder model.
 
 <figure id="fig:meas" data-latex-placement="ht">
 <img src="images/measurements.png" />
@@ -690,40 +658,34 @@ real load with the simulation and to fit the powder model.
 ## Series and charges
 
 A load can have several *series* (for example one per range day or
-rifle). [New series]{.sans-serif} starts an empty series, [Remove
-series]{.sans-serif} deletes the shown one, and the title field names
-it. Inside a series:
+rifle). New series starts an empty series, Remove series deletes the
+shown one, and the title field names it. Inside a series:
 
-Add charge
+Add charge  
+adds a charge (the load’s charge, or the next ladder charge). Add ladder
+charges adds every ladder charge that is not listed yet.
 
-: adds a charge (the load's charge, or the next ladder charge). [Add
-  ladder charges]{.sans-serif} adds every ladder charge that is not
-  listed yet.
-
-Remove charge
-
-: removes the selected charge with all its shots.
+Remove charge  
+removes the selected charge with all its shots.
 
 The table has one row per charge: name, charge, number of shots, mean
-velocity, SD, ES, the simulated velocity and the difference ($\Delta$),
-then the same for the peak pressure.
+velocity, SD, ES, the simulated velocity and the difference
+($`\Delta`$), then the same for the peak pressure.
 
 ## Shots
 
 Select a charge and enter the velocity (and pressure, if measured) of
-each shot. [Add shot]{.sans-serif}, [Remove shot]{.sans-serif} (Del) and
-[Paste shots]{.sans-serif} (one shot per line, velocity and optionally
-pressure) help. A note field per charge holds rifle, chronograph and
-conditions.
+each shot. Add shot, Remove shot (Del) and Paste shots (one shot per
+line, velocity and optionally pressure) help. A note field per charge
+holds rifle, chronograph and conditions.
 
 ## Importing chronograph files
 
-[Import chronograph file...]{.sans-serif} reads **Garmin Xero** files
-(the `.fit` file of the C1 Pro, or the CSV exported by the Garmin Xero
-app, in any language of the app), **MagnetoSpeed** CSV files and
-**Labradar** `Report.csv` files. Missed shots (speed 0) are left out.
-These files do not contain the powder charge; type it for each series in
-the import dialog.
+Import chronograph file… reads **Garmin Xero** files (the `.fit` file of
+the C1 Pro, or the CSV exported by the Garmin Xero app, in any language
+of the app), **MagnetoSpeed** CSV files and **Labradar** `Report.csv`
+files. Missed shots (speed 0) are left out. These files do not contain
+the powder charge; type it for each series in the import dialog.
 
 ## Statistics and chart
 
@@ -734,13 +696,12 @@ the lines to read values.
 
 ## Fit to measurements
 
-[Fit to measurements...]{.sans-serif} changes the propellant's model
-values until the simulation agrees with your data.
+Fit to measurements… changes the propellant’s model values until the
+simulation agrees with your data.
 
-!!! warning "Safety"
-
-    The result is only as good as your measurements and the powder data. Use
-    it for planning, not as a replacement for the manufacturer's data.
+> [!WARNING]
+> The result is only as good as your measurements and the powder data. Use
+> it for planning, not as a replacement for the manufacturer’s data.
 
 1.  **Prepare the load.** Enter a measured case volume and the real
     bullet and cartridge lengths.
@@ -750,32 +711,31 @@ values until the simulation agrees with your data.
     bullet weights or calibers.
 
 3.  **Open the dialog** and choose the *values to fit*. The default
-    depends on the data: $B_a$ alone for fewer than 3 charges, $B_a$ and
-    $a_0$ for 3 to 5, all four ($B_a$, $a_0$, $z_1$, $z_2$) for 6 or
-    more charges from at least two load files.
+    depends on the data: $`B_a`$ alone for fewer than 3 charges, $`B_a`$
+    and $`a_0`$ for 3 to 5, all four ($`B_a`$, $`a_0`$, $`z_1`$,
+    $`z_2`$) for 6 or more charges from at least two load files.
 
-4.  Click [Fit]{.sans-serif}. The dialog lists velocity and pressure of
-    every charge before and after the fit and the rms error. Read the
-    warnings (for example: the case volume is only the database value,
-    or there are fewer charges than values).
+4.  Click Fit. The dialog lists velocity and pressure of every charge
+    before and after the fit and the rms error. Read the warnings (for
+    example: the case volume is only the database value, or there are
+    fewer charges than values).
 
 5.  Check the result: after the fit, velocity differences should be
     small (below about 2 %).
 
-6.  [Apply to this load]{.sans-serif} puts the values into this load
-    only. [Save as own propellant...]{.sans-serif} stores a new record
-    "*name* (fitted)" in your own database, which you can then select in
-    any load. With the Physical Model and a project powder, the fit
-    changes the load's physical burn values instead and keeps them in
-    the load.
+6.  Apply to this load puts the values into this load only. Save as own
+    propellant… stores a new record “*name* (fitted)” in your own
+    database, which you can then select in any load. With the Physical
+    Model and a project powder, the fit changes the load’s physical burn
+    values instead and keeps them in the load.
 
 # Reports and printing
 
-The [Report]{.sans-serif} tab shows a formatted report of the load
-(Figure [4](#fig:report){reference-type="ref" reference="fig:report"}).
-With [**File**]{.sans-serif} $\triangleright$ [Print
-preview...]{.sans-serif}, [Print...]{.sans-serif} and [Export report as
-PDF...]{.sans-serif} you output it. The report scale is adjustable.
+The Report tab shows a formatted report of the load
+(Figure <a href="#fig:report" data-reference-type="ref"
+data-reference="fig:report">4</a>). With
+**File** $`\triangleright`$ Print preview…, Print… and Export report as
+PDF… you output it. The report scale is adjustable.
 
 <figure id="fig:report" data-latex-placement="ht">
 <img src="images/report.png" />
@@ -784,124 +744,106 @@ PDF...]{.sans-serif} you output it. The report scale is adjustable.
 
 ## Report templates
 
-In the settings, [Report template...]{.sans-serif} opens the template
-editor. A template is text with placeholders of the form
-`~~source.property~~` or `~~source.property("#.00")~~` (with a number
-format). Use [Insert value]{.sans-serif} to pick a placeholder and
-[Reset to default]{.sans-serif} to restore the standard template. The
-report of the Measurements tab includes only the selected series.
+In the settings, Report template… opens the template editor. A template
+is text with placeholders of the form `~~source.property~~` or
+`~~source.property("#.00")~~` (with a number format). Use Insert value
+to pick a placeholder and Reset to default to restore the standard
+template. The report of the Measurements tab includes only the selected
+series.
 
 # Tools
 
 ## Burn rate table
 
-[**Tools**]{.sans-serif} $\triangleright$ [Burn rate
-table...]{.sans-serif} compares propellants by burn rate, brisance
-($B_r$), progressivity ($B_p$) and the combined value ($B_{rp}$). These
-factors are derived from the powder's $B_a$, explosion heat, $k$ and the
-form-function values; the solver does not use them.
+**Tools** $`\triangleright`$ Burn rate table… compares propellants by
+burn rate, brisance ($`B_r`$), progressivity ($`B_p`$) and the combined
+value ($`B_{rp}`$). These factors are derived from the powder’s $`B_a`$,
+explosion heat, $`k`$ and the form-function values; the solver does not
+use them.
 
 ## Unit converter
 
-[**Tools**]{.sans-serif} $\triangleright$ [Unit
-converter...]{.sans-serif} converts between the units of the common
-quantities, for example grains and grams or bar and psi.
+**Tools** $`\triangleright`$ Unit converter… converts between the units
+of the common quantities, for example grains and grams or bar and psi.
 
 # Settings
 
-[**File**]{.sans-serif} $\triangleright$ [Settings...]{.sans-serif}
-(Ctrl+,) has these groups:
+**File** $`\triangleright`$ Settings… (Ctrl+,) has these groups:
 
-Database
+Database  
+The location of the original’s *plain* database (see
+Section <a href="#sec:dump" data-reference-type="ref"
+data-reference="sec:dump">4.2</a>).
 
-: The location of the original's *plain* database (see
-  Section [4.2](#sec:dump){reference-type="ref" reference="sec:dump"}).
+Units  
+The unit system (Metric, Imperial or Original) and Reset per-field
+units.
 
-Units
+Solver  
+The calculation model, and GRT Original for original GRT files
+(Section <a href="#sec:solver" data-reference-type="ref"
+data-reference="sec:solver">7.6</a>).
 
-: The unit system (Metric, Imperial or Original) and [Reset per-field
-  units]{.sans-serif}.
+Appearance  
+The Font size (with a button for the system default), Custom Title Bar
+(Linux: the program’s own title bar with the menu in the title row) and
+Rounded Dialog Corners (dialogs have their own frame with the custom
+title bar; this needs a compositing window manager and applies to
+dialogs opened afterwards). The theme is chosen in
+**View** $`\triangleright`$ Theme, not here.
 
-Solver
+Start-up  
+Open the loads of the last session at start. Not used when load files
+are given on the command line.
 
-: The calculation model, and GRT Original for original GRT files
-  (Section [7.6](#sec:solver){reference-type="ref"
-  reference="sec:solver"}).
+Logging  
+The log level (Debug, Info, Warning, Error or Off), output to the
+console and/or a log file, with Open log file and Clear log file.
 
-Appearance
-
-: The [Font size]{.sans-serif} (with a button for the system default),
-  [Custom Title Bar]{.sans-serif} (Linux: the program's own title bar
-  with the menu in the title row) and [Rounded Dialog
-  Corners]{.sans-serif} (dialogs have their own frame with the custom
-  title bar; this needs a compositing window manager and applies to
-  dialogs opened afterwards). The theme is chosen in
-  [**View**]{.sans-serif} $\triangleright$ [Theme]{.sans-serif}, not
-  here.
-
-Start-up
-
-: [Open the loads of the last session at start]{.sans-serif}. Not used
-  when load files are given on the command line.
-
-Logging
-
-: The log level (Debug, Info, Warning, Error or Off), output to the
-  console and/or a log file, with [Open log file]{.sans-serif} and
-  [Clear log file]{.sans-serif}.
-
-[Apply]{.sans-serif} puts the changes into effect and keeps the dialog
-open, [OK]{.sans-serif} applies and closes it, and [Cancel]{.sans-serif}
-also takes back what [Apply]{.sans-serif} did.
+Apply puts the changes into effect and keeps the dialog open, OK applies
+and closes it, and Cancel also takes back what Apply did.
 
 # Tips and troubleshooting
 
-"No original database" in the status line.
+“No original database” in the status line.  
+No plain copy of the original’s database has been chosen. The project’s
+records still work. Choose one in
+**File** $`\triangleright`$ Settings $`\triangleright`$ Database if you
+want the original’s records.
 
-: No plain copy of the original's database has been chosen. The
-  project's records still work. Choose one in
-  [**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Database]{.sans-serif}
-  if you want the original's records.
+Encrypted database error.  
+You chose the encrypted `GordonsReloadingTool.db`. Use the decrypted
+copy (see Section <a href="#sec:dump" data-reference-type="ref"
+data-reference="sec:dump">4.2</a>).
 
-Encrypted database error.
+“Charge too high”.  
+The charge does not fit into the case behind the bullet. Reduce the
+charge or increase the seating depth.
 
-: You chose the encrypted `GordonsReloadingTool.db`. Use the decrypted
-  copy (see Section [4.2](#sec:dump){reference-type="ref"
-  reference="sec:dump"}).
+A record cannot be edited.  
+Only your own records can be changed. Make a copy first.
 
-"Charge too high".
+The pressure is much higher than in the loading manual.  
+Check the case volume, the powder lot, the seating depth and the bullet
+data. Try another model and compare. Always trust the manual over the
+calculation.
 
-: The charge does not fit into the case behind the bullet. Reduce the
-  charge or increase the seating depth.
+The language does not change.  
+The language change takes effect after a restart.
 
-A record cannot be edited.
-
-: Only your own records can be changed. Make a copy first.
-
-The pressure is much higher than in the loading manual.
-
-: Check the case volume, the powder lot, the seating depth and the
-  bullet data. Try another model and compare. Always trust the manual
-  over the calculation.
-
-The language does not change.
-
-: The language change takes effect after a restart.
-
-Something else.
-
-: Set the log level to [Debug]{.sans-serif} and look at the log file.
+Something else.  
+Set the log level to Debug and look at the log file.
 
 # Glossary
 
-  Term              Meaning
-  ----------------- -------------------------------------------------------------------------------------------
-  $B_a$             Burn rate (vivacity) of the powder
-  $a_0, z_1, z_2$   Form-function values: the shape of the powder grain and the transitions of its burning
-  $Q_{ex}$          Explosion heat (energy content) of the powder
-  $k$               Ratio of the specific heats of the powder gases
-  BT                Barrel time: time for the bullet to reach the muzzle
-  SD / ES           Standard deviation and extreme spread of the velocity
-  Load ratio        Fraction of the case that the powder fills (loading density)
-  C.I.P.            Commission Internationale Permanente, which standardizes cartridge and chamber dimensions
-  $P_{max}$         Maximum permitted pressure
+| Term | Meaning |
+|:---|:---|
+| $`B_a`$ | Burn rate (vivacity) of the powder |
+| $`a_0, z_1, z_2`$ | Form-function values: the shape of the powder grain and the transitions of its burning |
+| $`Q_{ex}`$ | Explosion heat (energy content) of the powder |
+| $`k`$ | Ratio of the specific heats of the powder gases |
+| BT | Barrel time: time for the bullet to reach the muzzle |
+| SD / ES | Standard deviation and extreme spread of the velocity |
+| Load ratio | Fraction of the case that the powder fills (loading density) |
+| C.I.P. | Commission Internationale Permanente, which standardizes cartridge and chamber dimensions |
+| $`P_{max}`$ | Maximum permitted pressure |

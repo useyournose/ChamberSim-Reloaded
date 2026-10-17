@@ -7,12 +7,19 @@ repo_url: https://github.com/Schildkroet/ChamberSim-Reloaded
 nav:
   - Home: index.md
   - User Guide:
-    - Intro: intro.md
-    - Installation: installation.md
-    - Main window: window.md
-    - Tools: tools.md
-    - Troubleshooting: troubleshooting.md
-    - Glossary: glossary.md
+    - Intro: ug_intro.md
+    - Installation: ug_installation.md
+    - Main window: ug_mainwindow.md
+    - Database: ug_database.md
+    - Working with loads: ug_files.md
+    - New Loads: ug_newload.md
+    - Results: ug_results.md
+    - Measurements: ug_measurements.md
+    - Reports: ug_reports.md
+    - Tools: ug_tools.md
+    - Settings: ug_settings.md
+    - Troubleshooting: ug_troubleshooting.md
+    - Glossary: ug_glossary.md
   - Data Sources: DATA_SOURCES.md
   - Accuracy: accuracy.md
   - Solver: solver.md
