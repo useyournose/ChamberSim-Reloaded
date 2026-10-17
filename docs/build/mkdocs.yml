@@ -2,7 +2,7 @@ site_name: ChamberSim-Reloaded User Guide
 site_url: https://GITHUB_USERNAME.github.io
 site_author: you
 site_description: a short description of your website
-
+repo_url: https://github.com/Schildkroet/ChamberSim-Reloaded
 nav:
   - User Guide: index.md
 
@@ -11,6 +11,7 @@ theme:
   features:
     - navigation.sections
     - navigation.expand
+    - toc.integrate
     - toc.follow
   logo: images/logo.png
 
