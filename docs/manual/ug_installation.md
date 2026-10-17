@@ -5,10 +5,10 @@
 Release builds are available from the project’s GitHub page: an AppImage
 for Linux and a zip file for Windows. Unpack or make the AppImage
 executable and start it; no installation is needed. Both contain this
-manual (**Help** $`\triangleright`$ User manual, F1); the Windows zip
-also contains the Visual C++ runtime, so nothing else has to be
-installed. To build the program yourself you need Qt 6.4 or newer, CMake
-3.16 or newer and a C++20 compiler:
+manual (**Help** → User manual, F1); the Windows zip also contains the
+Visual C++ runtime, so nothing else has to be installed. To build the
+program yourself you need Qt 6.4 or newer, CMake 3.16 or newer and a
+C++20 compiler:
 
     tools/build.sh release
     build/release/ChamberSimReloaded

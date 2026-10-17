@@ -2,8 +2,7 @@
 
 “No original database” in the status line.  
 No plain copy of the original’s database has been chosen. The project’s
-records still work. Choose one in
-**File** $`\triangleright`$ Settings $`\triangleright`$ Database if you
+records still work. Choose one in **File** → Settings → Database if you
 want the original’s records.
 
 Encrypted database error.  

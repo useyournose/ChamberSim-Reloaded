@@ -33,10 +33,10 @@ burnt fraction.
 
 ## Reference overlay
 
-**File** $`\triangleright`$ Overlay reference result… (Ctrl+R) draws a
-saved result (a JSON file, for example from a run of the original
-program) as dashed curves over the chart of the shown load, for
-comparison. Clear reference overlay removes it.
+**File** → Overlay reference result… (Ctrl+R) draws a saved result (a
+JSON file, for example from a run of the original program) as dashed
+curves over the chart of the shown load, for comparison. Clear reference
+overlay removes it.
 
 ## Load development ladder
 
@@ -49,8 +49,7 @@ the steps; click one to display its curve.
 
 ## Choosing the solver model
 
-In **File** $`\triangleright`$ Settings $`\triangleright`$ Solver you
-select the model:
+In **File** → Settings → Solver you select the model:
 
 Physical Model  
 (default) A time-integrated model with flame spread, engraving,

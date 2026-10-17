@@ -2,9 +2,9 @@
 
 The Report tab shows a formatted report of the load
 (Figure <a href="#fig:report" data-reference-type="ref"
-data-reference="fig:report">4</a>). With
-**File** $`\triangleright`$ Print preview…, Print… and Export report as
-PDF… you output it. The report scale is adjustable.
+data-reference="fig:report">4</a>). With **File** → Print preview…,
+Print… and Export report as PDF… you output it. The report scale is
+adjustable.
 
 <figure id="fig:report" data-latex-placement="ht">
 <img src="images/report.png" />

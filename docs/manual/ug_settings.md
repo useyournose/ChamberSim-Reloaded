@@ -1,6 +1,6 @@
 # Settings
 
-**File** $`\triangleright`$ Settings… (Ctrl+,) has these groups:
+**File** → Settings… (Ctrl+,) has these groups:
 
 Database  
 The location of the original’s *plain* database (see
@@ -21,8 +21,8 @@ The Font size (with a button for the system default), Custom Title Bar
 (Linux: the program’s own title bar with the menu in the title row) and
 Rounded Dialog Corners (dialogs have their own frame with the custom
 title bar; this needs a compositing window manager and applies to
-dialogs opened afterwards). The theme is chosen in
-**View** $`\triangleright`$ Theme, not here.
+dialogs opened afterwards). The theme is chosen in **View** → Theme, not
+here.
 
 Start-up  
 Open the loads of the last session at start. Not used when load files

@@ -3,7 +3,7 @@
 The window has a menu bar and, below it, a row of tabs. The first tab,
 Database, is always present; every open load gets a tab of its own. On
 Linux the program draws its own title bar with the menu in the title row
-(**File** $`\triangleright`$ Settings $`\triangleright`$ Appearance).
+(**File** → Settings → Appearance).
 
 <figure id="fig:main" data-latex-placement="ht">
 <img src="images/main.png" />

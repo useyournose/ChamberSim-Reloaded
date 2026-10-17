@@ -2,8 +2,7 @@
 
 ## New load
 
-**File** $`\triangleright`$ New load… (Ctrl+N) opens a dialog with two
-steps.
+**File** → New load… (Ctrl+N) opens a dialog with two steps.
 
 ### Step 1: choose the components.
 
@@ -34,28 +33,27 @@ until you save it.
 
 ## Opening loads
 
-**File** $`\triangleright`$ Open load… (Ctrl+O) opens one or several
-files at once; you can also give files on the command line. Each load
-gets its own tab, named after the file. The file dialog offers three
-filters: all loads, `.csrload` only, and the original’s `.grtload` only.
+**File** → Open load… (Ctrl+O) opens one or several files at once; you
+can also give files on the command line. Each load gets its own tab,
+named after the file. The file dialog offers three filters: all loads,
+`.csrload` only, and the original’s `.grtload` only.
 
 - A load that is already open is not opened twice; its tab is shown
   instead.
 
-- **File** $`\triangleright`$ Open recent lists the last 12 loads. An
-  entry whose file has disappeared or cannot be read is removed from the
-  list.
+- **File** → Open recent lists the last 12 loads. An entry whose file
+  has disappeared or cannot be read is removed from the list.
 
 - If a file cannot be read, a message names the file and the reason.
 
 ## Saving loads
 
 A tab with unsaved changes shows an asterisk after its name.
-**File** $`\triangleright`$ Save (Ctrl+S) writes the load to its file; a
-new load (“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name.
-If you leave out the extension, `.csrload` is added. When you close a
-tab or quit with unsaved changes the program asks whether to Save,
-Discard or Cancel.
+**File** → Save (Ctrl+S) writes the load to its file; a new load
+(“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name. If you
+leave out the extension, `.csrload` is added. When you close a tab or
+quit with unsaved changes the program asks whether to Save, Discard or
+Cancel.
 
 ## The two file formats
 
@@ -106,10 +104,9 @@ unchanged when you save.
 
 ## Undo and redo
 
-Every load remembers its last 100 edits.
-**Edit** $`\triangleright`$ Undo (Ctrl+Z) takes back the last edit and
-**Edit** $`\triangleright`$ Redo (Ctrl+Shift+Z or Ctrl+Y) restores it
-again. The menu entries name the edit, for example Undo Select
+Every load remembers its last 100 edits. **Edit** → Undo (Ctrl+Z) takes
+back the last edit and **Edit** → Redo (Ctrl+Shift+Z or Ctrl+Y) restores
+it again. The menu entries name the edit, for example Undo Select
 Propellant. The following edits are recorded:
 
 - changing a value in the property tables;
@@ -131,11 +128,10 @@ be undone.
 ## Sessions
 
 The program remembers the loads that were open when you quit (only those
-that have a file). With
-**File** $`\triangleright`$ Settings $`\triangleright`$ Start-up $`\triangleright`$ 
-Open the loads of the last session at start they are opened again at the
-next start, and the tab that was shown is selected again. Files that no
-longer exist are skipped.
+that have a file). With **File** → Settings → Start-up →  Open the loads
+of the last session at start they are opened again at the next start,
+and the tab that was shown is selected again. Files that no longer exist
+are skipped.
 
 ## Tips
 

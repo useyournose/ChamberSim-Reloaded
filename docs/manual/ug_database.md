@@ -28,8 +28,7 @@ column:
     converted to a plain copy
     (Section <a href="#sec:dump" data-reference-type="ref"
     data-reference="sec:dump">4.2</a>); choose that copy in
-    **File** $`\triangleright`$ Settings $`\triangleright`$ Database. It
-    is only read, never changed.
+    **File** → Settings → Database. It is only read, never changed.
 
 ## Using the original’s database
 
@@ -92,12 +91,12 @@ only) and `-Timeout SECONDS`.
 
 ### Using the copy.
 
-Open **File** $`\triangleright`$ Settings $`\triangleright`$ Database,
-choose `GordonsReloadingTool.plain.db` as the Original database. The
-status line at the bottom then shows the file name and the number of
-calibers, projectiles and propellants, and the records appear in the
-Database tab with the source Original GRT. They are read-only; to change
-one, make a copy. You can also start the program with
+Open **File** → Settings → Database, choose
+`GordonsReloadingTool.plain.db` as the Original database. The status
+line at the bottom then shows the file name and the number of calibers,
+projectiles and propellants, and the records appear in the Database tab
+with the source Original GRT. They are read-only; to change one, make a
+copy. You can also start the program with
 `-d GordonsReloadingTool.plain.db`.
 
 > [!NOTE]
