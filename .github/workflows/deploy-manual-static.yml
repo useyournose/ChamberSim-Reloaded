@@ -57,10 +57,11 @@ jobs:
           working-directory: docs/build
       
       - name: build with jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        working-directory: docs/build
         env:
           JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        working-directory: docs/build
 
       - name: show files
         run: ls -alR 
