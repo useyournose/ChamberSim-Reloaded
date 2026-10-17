@@ -12,6 +12,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - toc.follow
+  logo: images/logo.png
 
 markdown_extensions:
   - admonition
