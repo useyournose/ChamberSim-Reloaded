@@ -25,14 +25,18 @@ jobs:
           pandoc manual.tex \
             --standalone \
             --to=gfm \
-            --lua-filter=mkdocs.lua \
+            --lua-filter=build/mkdocs.lua \
             --output=manual.md
+
+      - name: Split manual into sections
+        run: python3 docs/manual/split_manual.py
 
       - name: upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 ##v7.0.2
         with:
           path: |
             docs/manual/manual.md
+            docs/manual/ug_*.md
             docs/manual/images/
       
      

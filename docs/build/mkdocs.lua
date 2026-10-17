@@ -25,6 +25,12 @@ function Span(span)
   end
 end
 
+function Math(math)
+  if math.text == "\\triangleright" then
+    return pandoc.Str("→")
+  end
+end
+
 function Header(header)
   if header.level == 4 then
     header.level = 3

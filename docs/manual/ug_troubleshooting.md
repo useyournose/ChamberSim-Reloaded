@@ -1,7 +1,6 @@
 # Tips and troubleshooting
 
-> *“No original database” in the status line.*
-
+“No original database” in the status line.  
 No plain copy of the original’s database has been chosen. The project’s
 records still work. Choose one in
 **File** $`\triangleright`$ Settings $`\triangleright`$ Database if you

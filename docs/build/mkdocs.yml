@@ -1,6 +1,6 @@
-site_name: ChamberSim-Reloaded User Guide
+site_name: ChamberSim-Reloaded
 site_url: https://GITHUB_USERNAME.github.io
-site_author: you
+site_author: Schildkroet
 site_description: a short description of your website
 repo_name: Schildkroet/ChamberSim-Reloaded
 repo_url: https://github.com/Schildkroet/ChamberSim-Reloaded
@@ -26,7 +26,6 @@ nav:
   - Fit your Powder: FIT_POWDER.md
   - Cheatsheet: CHEATSHEET.md
   - Contributing: CONTRIBUTING.md
-
 
 theme:
   name: material 
