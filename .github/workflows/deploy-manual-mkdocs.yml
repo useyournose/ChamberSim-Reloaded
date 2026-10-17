@@ -36,6 +36,7 @@ jobs:
           sparse-checkout: |
             docs/manual
             docs/build
+            packaging/linux/chambersimreloaded.svg
 
       - name: Setup Pages
         id: pages
