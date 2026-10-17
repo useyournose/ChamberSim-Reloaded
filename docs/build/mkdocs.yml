@@ -6,7 +6,7 @@ repo_name: Schuldkroet/ChamberSim-Reloaded
 repo_url: https://github.com/Schildkroet/ChamberSim-Reloaded
 nav:
 #  - User Guide: index.md
-  - Introduction: introduction.md
+  - Introduction: intro.md
   - Installation: installation.md
   - Main window: window.md
   - tools: tools.md
