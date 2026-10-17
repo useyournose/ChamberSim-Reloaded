@@ -29,6 +29,10 @@ function Math(math)
   if math.text == "\\triangleright" then
     return pandoc.Str("→")
   end
+
+  if math.mathtype == "InlineMath" then
+    return pandoc.RawInline("gfm", "$" .. math.text .. "$")
+  end
 end
 
 function Header(header)
