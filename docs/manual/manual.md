@@ -1,14 +1,3 @@
----
-date: |
-  Manual version 1.1\
-  for ChamberSim Reloaded version 0.3
-title: |
-  ![image](images/logo.png){width="3.5cm"}\
-  **ChamberSim Reloaded**\
-  Interior ballistics for handloaders\
-  User Manual
----
-
 ChamberSim Reloaded
 ===================
 
