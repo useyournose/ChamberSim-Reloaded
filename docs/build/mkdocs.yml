@@ -40,3 +40,13 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Schildkroet
+plugins:      
+  - exporter:
+      formats:
+        pdf:
+          enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
+          concurrency: 8
+          aggregator:
+            enabled: true
+            output: .well-known/site.pdf
+            covers: all
