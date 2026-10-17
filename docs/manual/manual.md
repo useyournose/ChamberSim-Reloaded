@@ -1,11 +1,16 @@
-# ChamberSim Reloaded
-===================
+---
+date: |
+  Manual version 1.2\
+  for ChamberSim Reloaded version 0.3
+title: |
+  ![image](images/logo.png){width="3.5cm"}\
+  **ChamberSim Reloaded**\
+  Interior ballistics for handloaders\
+  User Manual
+---
 
-***Interior ballistics for handloaders***
+!!! warning "Safety"
 
-![image](images/logo.png)
-
-!!! warning
     The results of this program are *calculated*. They can differ
     considerably from reality. Compare every load with the current loading
     tables of the component manufacturers and start low. The software is
@@ -14,7 +19,6 @@
     injury or death or any other consequence of using this software or its
     results, including damage to firearms or property. Reloading ammunition
     is dangerous and is done entirely at your own responsibility.
-
 
 *ChamberSim Reloaded is an independent project. It is not affiliated
 with, endorsed or supported by Gordon's Reloading Tool or its author.*
@@ -60,19 +64,26 @@ stores its own loads in the `.csrload` format.
 
 The default *Physical Model* is fitted to published load data of powder
 manufacturers. Against loads that were left out of the fit, the muzzle
-velocity is typically within 3--5 % (root mean square) and the peak
-pressure within about 15 %. Single loads can deviate much more. Unusual
-loads, other powders and other cartridges than the ones tested can
-deviate more again; slow powders at low pressure, pistol and revolver
-cartridges (about 8 % in velocity and 19 % in pressure) and shotgun
-loads are known weak spots. The project's `README.md` contains the
-current accuracy tables.
+velocity is typically within 3--6 % (root mean square; Vihtavuori
+powders about 3 %, Hodgdon about 6 %) and the peak pressure within about
+15 % where the tables publish it. The scatter of the published tables
+themselves (lots, barrels, components) is of that size. Single loads can
+deviate much more. Unusual loads, other powders and other cartridges
+than the ones tested can deviate more again; slow powders at low
+pressure, pistol and revolver cartridges (about 8 % in velocity and 19 %
+in pressure) and shotgun loads (about 3 % in velocity and 16 % in
+pressure, with their own constants) are known weak spots. Powders
+without physical burn values, such as your own records, are less
+accurate than the project's powders. The [GRT Original]{.sans-serif}
+model reproduces the results of the original program to about 1 % in
+velocity and 3 % in pressure. The files `README.md` and
+`docs/ACCURACY.md` of the project contain the current accuracy tables.
 
-::: warning
-Never use a calculated load without checking it against the
-manufacturer's data. Work up from a safe starting charge and watch for
-signs of excessive pressure.
-:::
+!!! warning "Safety"
+
+    Never use a calculated load without checking it against the
+    manufacturer's data. Work up from a safe starting charge and watch for
+    signs of excessive pressure.
 
 # Installation and first start
 
@@ -80,7 +91,10 @@ signs of excessive pressure.
 
 Release builds are available from the project's GitHub page: an AppImage
 for Linux and a zip file for Windows. Unpack or make the AppImage
-executable and start it; no installation is needed. To build the program
+executable and start it; no installation is needed. Both contain this
+manual ([**Help**]{.sans-serif} $\triangleright$ [User
+manual]{.sans-serif}, F1); the Windows zip also contains the Visual C++
+runtime, so nothing else has to be installed. To build the program
 yourself you need Qt 6.4 or newer, CMake 3.16 or newer and a C++20
 compiler:
 
@@ -98,7 +112,8 @@ There is no entry in the settings to bring it back.
 ## Command-line options
 
     ChamberSimReloaded [options] [load.csrload ...]
-      -d <file>             the original's (plain) database
+      -d, --database <file> the original's (plain) database
+      -r, --reference <f>   overlay a reference result (JSON) on the chart
       --calibration <m>     solver model: original|published|physical
       --language <code>     de_DE, en_US, fr_FR, it_IT
       --theme <t>           light | dark
@@ -106,7 +121,11 @@ There is no entry in the settings to bring it back.
       --log-level <level>   debug | info | warning | error
       --help                all options
 
-Files given on the command line are opened as loads.
+Files given on the command line are opened as loads. `--theme` applies
+to this run only; `--units` and `--calibration` are saved like the
+choices in the settings. `--screenshot` saves an image of the window and
+exits (for documentation; see `--help` for `--tab`, `--input-tab` and
+`--result-tab`).
 
 ## Simulating without the window {#sec:csrsim}
 
@@ -126,12 +145,15 @@ prints one row per load and ladder step.
                             {name} is replaced by the load's file name
       --steps <n>           position steps of the solver (default 2000)
 
-Each row holds the charge, maximum and muzzle pressure, muzzle velocity,
-energy and time, burnt fraction, efficiency, burnout in the barrel, load
-ratio and the status. Units are g, mm, bar, m/s, J and ms, whatever the
-unit settings of the program. The exit code is 0 when all simulations
-succeeded, 1 when at least one failed (for example because the charge
-does not fit into the case) and 2 for a usage or file error.
+The program's project data (physical burn values of the powders and the
+factors of the pistol and revolver calibers) are built in, so the
+results equal those of the program. Each row holds the charge, maximum
+and muzzle pressure, muzzle velocity, energy and time, burnt fraction,
+efficiency, burnout in the barrel, load ratio and the status. Units are
+g, mm, bar, m/s, J and ms, whatever the unit settings of the program.
+The exit code is 0 when all simulations succeeded, 1 when at least one
+failed (for example because the charge does not fit into the case) and 2
+for a usage or file error.
 
 # The main window
 
@@ -167,6 +189,7 @@ Section [5.6](#sec:undo){reference-type="ref" reference="sec:undo"}.
 
 [Burn rate table...]{.sans-serif} and [Unit converter...]{.sans-serif}.
 
+[User manual]{.sans-serif} (F1), which opens this manual as a PDF, and
 [About ChamberSim Reloaded...]{.sans-serif}
 :::
 
@@ -189,9 +212,6 @@ column header to sort.
 <img src="images/database.png" />
 <figcaption>The Database tab.</figcaption>
 </figure>
-
-![database image](images/database.png "The Database Tab")
-
 
 ## Where the records come from {#sec:sources}
 
@@ -255,7 +275,7 @@ asking), `-c` (only report what is found and missing, change nothing),
 `--headless` (use a virtual display, no window appears), `-t SECONDS`
 (give up after this time, default 90) and `-h` (help).
 
-#### Windows
+#### Windows.
 
 1.  Copy `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1` into
     the folder of Gordon's Reloading Tool (next to
@@ -271,7 +291,7 @@ asking), `-c` (only report what is found and missing, change nothing),
 In PowerShell the options are `-Out FILE`, `-Yes`, `-Check` (report
 only) and `-Timeout SECONDS`.
 
-#### Using the copy
+#### Using the copy.
 
 Open
 [**File**]{.sans-serif} $\triangleright$ [Settings]{.sans-serif} $\triangleright$ [Database]{.sans-serif},
@@ -283,11 +303,11 @@ the records appear in the [Database]{.sans-serif} tab with the source
 copy. You can also start the program with
 `-d GordonsReloadingTool.plain.db`.
 
-::: note
-Do not distribute the plain copy. It is for your own use with your own
-copy of Gordon's Reloading Tool. If the original program is updated,
-make a new copy.
-:::
+!!! note "Note"
+
+    Do not distribute the plain copy. It is for your own use with your own
+    copy of Gordon's Reloading Tool. If the original program is updated,
+    make a new copy.
 
 ## Working with records
 
@@ -384,12 +404,10 @@ unsaved changes the program asks whether to [Save]{.sans-serif},
 
 ## The two file formats
 
-::: center
   ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   `.csrload`   The program's own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes.
   `.grtload`   The format of Gordon's Reloading Tool. It can be opened and, as an export, written.
   ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-:::
 
 The format is chosen by the file name's extension.
 
@@ -504,7 +522,13 @@ Mass, diameter, length and the other bullet data. [Select
 Projectile...]{.sans-serif} replaces the bullet; tick [Show only bullets
 that fit the caliber]{.sans-serif} to narrow the list. The [Initial Gas
 Pressure]{.sans-serif} is the pressure at which the bullet starts to
-move and engraves.
+move and engraves. The [Bullet friction]{.sans-serif} is an extra
+resistance in bar that acts all along the barrel; it is always applied.
+Negative values are possible and describe low-friction bullets (the
+original's database has values down to $-100$ bar). For 362 rifle
+bullets the project records carry start pressure and friction values
+fitted to published loads. A load keeps the values it was made with
+until you select the bullet again.
 
 ## Propellant {#sec:propellant}
 
@@ -596,6 +620,14 @@ the chart to read the values at that point.
 The smaller chart shows the burn rate $B_a\cdot\varphi(z)$ over the
 burnt fraction.
 
+## Reference overlay
+
+[**File**]{.sans-serif} $\triangleright$ [Overlay reference
+result...]{.sans-serif} (Ctrl+R) draws a saved result (a JSON file, for
+example from a run of the original program) as dashed curves over the
+chart of the shown load, for comparison. [Clear reference
+overlay]{.sans-serif} removes it.
+
 ## Load development ladder
 
 With a ladder, the program simulates several charges at once. Set the
@@ -639,7 +671,7 @@ Original (original GRT file, ...)]{.sans-serif}). Once the load is saved
 as a `.csrload`, it uses the selected model again.
 
 <figure data-latex-placement="ht">
-<img src="propellant.png" />
+<img src="images/propellant.png" />
 <figcaption>The Propellant input tab with results and
 chart.</figcaption>
 </figure>
@@ -651,7 +683,7 @@ pressure data. It is stored in the load file and used to compare the
 real load with the simulation and to fit the powder model.
 
 <figure id="fig:meas" data-latex-placement="ht">
-<img src="measurements.png" />
+<img src="images/measurements.png" />
 <figcaption>The Measurements tab.</figcaption>
 </figure>
 
@@ -705,10 +737,10 @@ the lines to read values.
 [Fit to measurements...]{.sans-serif} changes the propellant's model
 values until the simulation agrees with your data.
 
-::: warning
-The result is only as good as your measurements and the powder data. Use
-it for planning, not as a replacement for the manufacturer's data.
-:::
+!!! warning "Safety"
+
+    The result is only as good as your measurements and the powder data. Use
+    it for planning, not as a replacement for the manufacturer's data.
 
 1.  **Prepare the load.** Enter a measured case volume and the real
     bullet and cartridge lengths.
@@ -746,7 +778,7 @@ preview...]{.sans-serif}, [Print...]{.sans-serif} and [Export report as
 PDF...]{.sans-serif} you output it. The report scale is adjustable.
 
 <figure id="fig:report" data-latex-placement="ht">
-<img src="report.png" />
+<img src="images/report.png" />
 <figcaption>The Report tab.</figcaption>
 </figure>
 
@@ -793,7 +825,7 @@ Units
 Solver
 
 : The calculation model, and GRT Original for original GRT files
-  (Section [7.5](#sec:solver){reference-type="ref"
+  (Section [7.6](#sec:solver){reference-type="ref"
   reference="sec:solver"}).
 
 Appearance
@@ -862,14 +894,14 @@ Something else.
 
 # Glossary
 
-| Term | Meaning |
-| --- |---|
-| $B_a$ | Burn rate (vivacity) of the powder |
-| $a_0$, $z_1$, $z_2$ | Form-function values: the shape of the powder grain and the transitions of its burning |
-| $Q_{ex}$ | Explosion heat (energy content) of the powder |
-| $k$ | Ratio of the specific heats of the powder gases |
-| BT |Barrel time: time for the bullet to reach the muzzle |
-| SD / ES |Standard deviation and extreme spread of the velocity |
-| Load ratio | Fraction of the case that the powder fills (loading density) |
-| C.I.P. | Commission Internationale Permanente, which standardizes cartridge and chamber dimensions |
-| $P_{max}$ | Maximum permitted pressure |
+  Term              Meaning
+  ----------------- -------------------------------------------------------------------------------------------
+  $B_a$             Burn rate (vivacity) of the powder
+  $a_0, z_1, z_2$   Form-function values: the shape of the powder grain and the transitions of its burning
+  $Q_{ex}$          Explosion heat (energy content) of the powder
+  $k$               Ratio of the specific heats of the powder gases
+  BT                Barrel time: time for the bullet to reach the muzzle
+  SD / ES           Standard deviation and extreme spread of the velocity
+  Load ratio        Fraction of the case that the powder fills (loading density)
+  C.I.P.            Commission Internationale Permanente, which standardizes cartridge and chamber dimensions
+  $P_{max}$         Maximum permitted pressure
