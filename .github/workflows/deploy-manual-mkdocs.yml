@@ -34,8 +34,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
         with:
           sparse-checkout: |
-            docs/manual/images
-            docs/manual/*.md
+            docs/manual
             docs/build
 
       - name: Setup Pages
@@ -47,7 +46,7 @@ jobs:
         working-directory: docs
         run: |
           mkdir -p build/docs
-          mv manual/manual.md build/docs/index.md
+          mv manual/*.md build/docs/
           mv manual/images build/docs/
           mv build/javascripts build/docs/
 
