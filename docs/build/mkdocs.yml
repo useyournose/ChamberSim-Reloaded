@@ -8,9 +8,6 @@ nav:
 
 theme:
   name: material 
-  highlightjs: true
-  hljs_languages:
-    - yaml
   features:
     - navigation.sections
     - navigation.expand
