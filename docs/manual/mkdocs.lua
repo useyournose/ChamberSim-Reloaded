@@ -12,6 +12,13 @@ function Image(image)
   return image
 end
 
+function Table(table)
+  return pandoc.RawBlock(
+    "markdown",
+    pandoc.write(pandoc.Pandoc({table}), "gfm")
+  )
+end
+
 function Div(div)
   for class, title in pairs(admonition_titles) do
     if div.classes:includes(class) then
