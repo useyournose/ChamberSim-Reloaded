@@ -73,7 +73,7 @@ plugins:
           aggregator:
             enabled: true
             output: documentation.pdf
-            covers: all
+            covers: book
           stylesheets:
             - resources/stylesheets/pdf.scss
           covers:

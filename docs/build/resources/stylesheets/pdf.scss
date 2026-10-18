@@ -1,6 +1,9 @@
 @page {
   size: A4;
   margin: 1.20cm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+  }
 }
 
 .front-cover {
