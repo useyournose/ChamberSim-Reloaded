@@ -4,6 +4,8 @@ site_author: Schildkroet
 site_description: a short description of your website
 repo_name: Schildkroet/ChamberSim-Reloaded
 repo_url: https://github.com/Schildkroet/ChamberSim-Reloaded
+hooks:
+  - hooks/generate_toc.py
 nav:
   - Home: index.md
   - User Guide:
