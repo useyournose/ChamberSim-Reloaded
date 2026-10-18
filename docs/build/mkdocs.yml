@@ -68,6 +68,8 @@ plugins:
       formats:
         pdf:
           enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
+          browser:
+            debug: true
           concurrency: 8
           explicit: true
           aggregator:
