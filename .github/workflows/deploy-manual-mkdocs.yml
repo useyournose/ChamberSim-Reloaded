@@ -88,7 +88,17 @@ jobs:
         shell: bash
         working-directory: docs/build
         run: |
+          MKDOCS_EXPORTER_PDF=false \
           mkdocs build
+
+      - name: Build combined manual PDF
+        shell: bash
+        working-directory: docs/build
+        run: |
+          MKDOCS_EXPORTER_PDF=true \
+          MKDOCS_EXPORTER_PDF_ONLY=true \
+          mkdocs build --site-dir pdf-site
+          cp pdf-site/documentation.pdf site/documentation.pdf
 
       - name: show files
         run: ls -alR 
