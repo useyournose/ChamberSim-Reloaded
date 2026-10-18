@@ -14,8 +14,7 @@
 
 .front-cover {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 27cm;
   padding: 2cm 1cm 1cm;
   text-align: center;
@@ -39,7 +38,11 @@
 }
 
 .front-cover .admonition.warning {
-  margin: auto 0 0.5cm;
+  position: absolute;
+  right: 1cm;
+  bottom: 2cm;
+  left: 1cm;
+  margin: 0;
   padding: 0.5cm;
   border-left: 0.15cm solid #d18b00;
   background: #fff5d6;
@@ -53,6 +56,10 @@
 }
 
 .front-cover-disclaimer {
+  position: absolute;
+  right: 1cm;
+  bottom: 0.5cm;
+  left: 1cm;
   margin: 0;
 }
 
