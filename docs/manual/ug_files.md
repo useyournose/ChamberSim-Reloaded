@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Making, opening and saving loads
 
 ## New load

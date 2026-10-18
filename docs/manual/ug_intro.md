@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Introduction
 
 ChamberSim Reloaded calculates the *interior ballistics* of a handload:

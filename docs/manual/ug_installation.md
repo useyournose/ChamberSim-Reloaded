@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Installation and first start
 
 ## Installing

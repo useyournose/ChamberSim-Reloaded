@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Tools
 
 ## Burn rate table

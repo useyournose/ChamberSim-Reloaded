@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Tips and troubleshooting
 
 “No original database” in the status line.  

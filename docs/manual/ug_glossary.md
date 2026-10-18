@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Glossary
 
 | Term | Meaning |

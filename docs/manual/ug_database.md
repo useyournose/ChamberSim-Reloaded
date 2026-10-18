@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # The database
 
 The Database tab

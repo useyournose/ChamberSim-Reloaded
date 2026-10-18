@@ -1,3 +1,7 @@
+---
+pdf: true
+---
+
 # Settings
 
 **File** → Settings… (Ctrl+,) has these groups:
