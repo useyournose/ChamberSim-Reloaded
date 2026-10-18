@@ -75,7 +75,7 @@ plugins:
             output: documentation.pdf
             covers: all
           stylesheets:
-            - stylesheets/pdf.scss
+            - resources/stylesheets/pdf.scss
           covers:
             front: resources/templates/covers/front.html.j2
             back: resources/templates/covers/back.html.j2
