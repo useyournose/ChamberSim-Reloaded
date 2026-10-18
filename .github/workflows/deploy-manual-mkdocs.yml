@@ -81,7 +81,7 @@ jobs:
         shell: bash
         working-directory: docs/build
         run: |
-          playwright install chrome --with-deps
+          playwright install --with-deps --only-shell
 
       - name: Build site
         shell: bash
