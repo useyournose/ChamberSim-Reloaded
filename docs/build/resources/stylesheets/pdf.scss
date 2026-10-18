@@ -37,17 +37,21 @@
   font-weight: 600;
 }
 
-.front-cover .admonition.warning {
+.front-cover-bottom {
   position: absolute;
   right: 1cm;
-  bottom: 2cm;
+  bottom: 1cm;
   left: 1cm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.front-cover .admonition.warning {
   margin: 0;
   padding: 0.5cm;
   border-left: 0.15cm solid #d18b00;
   background: #fff5d6;
   text-align: left;
-  break-inside: avoid;
 }
 
 .front-cover .admonition-title {
@@ -56,11 +60,7 @@
 }
 
 .front-cover-disclaimer {
-  position: absolute;
-  right: 1cm;
-  bottom: 0.5cm;
-  left: 1cm;
-  margin: 0;
+  margin: 0.5cm 0 0;
 }
 
 .back-cover {
