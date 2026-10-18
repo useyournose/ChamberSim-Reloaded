@@ -99,8 +99,3 @@ plugins:
           covers:
             front: resources/templates/covers/front.html.j2
             back: resources/templates/covers/back.html.j2
-      buttons:
-        - title: Download as PDF
-          icon: material-file-download-outline
-          enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
-          attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes

@@ -34,7 +34,7 @@ def _markdown_parser() -> markdown.Markdown:
             "pymdownx.superfences",
             "pymdownx.arithmatex",
         ],
-        extension_configs={"toc": {"toc_depth": "2-3"}},
+        extension_configs={"toc": {"toc_depth": "1-2"}},
     )
 
 
