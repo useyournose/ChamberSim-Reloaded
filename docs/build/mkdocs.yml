@@ -69,6 +69,8 @@ plugins:
           enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
           concurrency: 8
           explicit: true
+          scripts:
+            - javascripts/mathjax-pdf.js
           aggregator:
             enabled: true
             output: documentation.pdf
