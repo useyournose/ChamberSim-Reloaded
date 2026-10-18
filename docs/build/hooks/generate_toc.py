@@ -2,6 +2,7 @@ import html
 import os
 import posixpath
 import re
+from datetime import datetime, timezone
 from urllib.parse import quote
 
 import markdown
@@ -209,9 +210,10 @@ def on_files(files: Files, config: Config) -> Files:
 
 
 def on_page_markdown(markdown_text: str, page: Page, **kwargs) -> str:
-    if (
-        os.environ.get(PDF_ONLY_ENV, "").lower() in {"1", "true", "yes"}
-        and page.file.src_path != "generated_manual.md"
-    ):
-        page.meta["pdf"] = False
+    if os.environ.get(PDF_ONLY_ENV, "").lower() in {"1", "true", "yes"}:
+        if page.file.src_path != "generated_manual.md":
+            page.meta["pdf"] = False
+        else:
+            timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+            markdown_text = markdown_text.replace("{{ GENERATED_AT }}", timestamp)
     return markdown_text

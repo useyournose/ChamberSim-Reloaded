@@ -6,8 +6,16 @@
   }
 }
 
+@page :first {
+  @bottom-center {
+    content: none;
+  }
+}
+
 .front-cover {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   min-height: 27cm;
   padding: 2cm 1cm 1cm;
   text-align: center;
@@ -31,7 +39,7 @@
 }
 
 .front-cover .admonition.warning {
-  margin: 1.5cm 0 1cm;
+  margin: auto 0 0.5cm;
   padding: 0.5cm;
   border-left: 0.15cm solid #d18b00;
   background: #fff5d6;
@@ -45,11 +53,13 @@
 }
 
 .front-cover-disclaimer {
-  margin-top: 1cm;
+  margin: 0;
 }
 
 .back-cover {
   box-sizing: border-box;
+  break-before: page;
+  page-break-before: always;
   min-height: 27cm;
   padding: 2cm 1cm 1cm;
   text-align: center;
