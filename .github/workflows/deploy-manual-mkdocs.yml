@@ -51,6 +51,7 @@ jobs:
           mv *.md build/docs/
           mv manual/images build/docs/
           mv build/javascripts build/docs/
+          mv build/resources build/docs/
           ### when docs are split up, this needs to go.
           ##mv -f build/docs/manual.md build/docs/index.md
 
