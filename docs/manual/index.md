@@ -15,3 +15,5 @@
 
 *ChamberSim Reloaded is an independent project. It is not affiliated
 with, endorsed or supported by Gordon’s Reloading Tool or its author.*
+
+[Download User Guide (PDF) :material-download:](/ChamberSimReloaded-UserGuide.pdf){ .md-button }

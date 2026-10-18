@@ -27,7 +27,7 @@
   margin: 0 auto 0.6cm;
 }
 
-.front-cover h1 {
+.front-cover h1, .front-cover h2 {
   margin-bottom: 0.2cm;
 }
 
@@ -37,17 +37,8 @@
   font-weight: 600;
 }
 
-.front-cover-bottom {
-  position: absolute;
-  right: 1cm;
-  top: 20cm;
-  left: 1cm;
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
 .front-cover .admonition.warning {
-  margin: 0;
+  margin-top : 5cm;
   padding: 0.5cm;
   border-left: 0.15cm solid #d18b00;
   background: #fff5d6;

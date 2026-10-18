@@ -31,9 +31,7 @@ nav:
 
 theme:
   name: material 
-  custom_dir: overrides
   features:
-    - search
     - navigation.sections
     - navigation.expand
     - toc.integrate
@@ -42,11 +40,6 @@ theme:
   logo: images/favicon.svg
   favicon: images/favicon.svg
   palette: 
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
     # Palette toggle for light mode
     - scheme: default
       toggle:
@@ -88,7 +81,8 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Schildkroet
 
-plugins:      
+plugins:     
+  - search 
   - exporter:
       formats:
         pdf:
