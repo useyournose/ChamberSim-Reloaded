@@ -1,9 +1,6 @@
 name: Build Documentation
 
 on:
-  push:
-    branches:
-      - uyn-mdoku
   workflow_dispatch:
 
 jobs:
