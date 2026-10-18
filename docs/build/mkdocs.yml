@@ -67,13 +67,14 @@ plugins:
   - exporter:
       formats:
         pdf:
-          enabled: false ##!ENV [MKDOCS_EXPORTER_PDF, true]
+          enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
           concurrency: 1
           explicit: true
+          covers: 
           aggregator:
             enabled: true
             output: documentation.pdf
-            covers: book
+            covers: limits
           stylesheets:
             - resources/stylesheets/pdf.scss
           covers:

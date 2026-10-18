@@ -47,3 +47,16 @@
 .front-cover-disclaimer {
   margin-top: 1cm;
 }
+
+.back-cover {
+  box-sizing: border-box;
+  min-height: 27cm;
+  padding: 2cm 1cm 1cm;
+  text-align: center;
+}
+
+.back-cover .title {
+  margin-top: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
