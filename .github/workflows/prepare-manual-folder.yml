@@ -2,6 +2,10 @@ name: Prepare manual folder
 
 on:
   workflow_call:
+    outputs:
+      artifact_id: 
+        description: "artifact id"
+        value:  ${{ jobs.prep-folder.outputs.artifact_id }}
 
 permissions:
   contents: read
@@ -9,6 +13,8 @@ permissions:
 jobs:
   prep-folder:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact-id}}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
@@ -39,11 +45,8 @@ jobs:
       - name: Convert GFM alerts for MkDocs
         run: python docs/build/gfm_to_mkdocs.py docs/build/docs
 
-      - name: show files
-        run: ls -alR
-        working-directory: docs
-
       - name: upload folder
+        id: upload
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 ##v7.0.2
         with:
           name: folder
