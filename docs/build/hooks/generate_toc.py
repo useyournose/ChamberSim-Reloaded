@@ -54,10 +54,11 @@ def _is_pdf_page(page: Page) -> bool:
     return is_pdf_page
 
 
-def _page_toc(page: Page) -> tuple[bool, str]:
+def _page_toc(page: Page, include_non_pdf: bool = False) -> tuple[bool, str]:
     _, parser = _page_markdown(page)
     pdf_values = parser.Meta.get("pdf", ["false"])
-    if not pdf_values or pdf_values[0].strip().lower() != "true":
+    is_pdf_page = bool(pdf_values) and pdf_values[0].strip().lower() == "true"
+    if not is_pdf_page and not include_non_pdf:
         return False, ""
 
     page_url = posixpath.relpath(page.file.url, "generated_site_toc/")
@@ -74,6 +75,21 @@ def _nav_pages(items: list) -> list[Page]:
         elif isinstance(item, Section):
             pages.extend(_nav_pages(item.children))
     return pages
+
+
+def _section_page_paths(items: list, section_title: str) -> set[str]:
+    page_paths = set()
+    for item in items:
+        if isinstance(item, Page):
+            continue
+        if isinstance(item, Section):
+            if item.title == section_title:
+                page_paths.update(
+                    page.file.src_path for page in _nav_pages(item.children)
+                )
+            else:
+                page_paths.update(_section_page_paths(item.children, section_title))
+    return page_paths
 
 
 def _demote_headings(content: str) -> str:
@@ -114,10 +130,10 @@ def _demote_headings(content: str) -> str:
     return "\n".join(output)
 
 
-def _merged_manual(pages: list[Page]) -> str:
+def _merged_manual(pages: list[Page], always_include_paths: set[str]) -> str:
     chapters = []
     for page in pages:
-        if not _is_pdf_page(page):
+        if page.file.src_path not in always_include_paths and not _is_pdf_page(page):
             continue
 
         content, _ = _page_markdown(page)
@@ -142,13 +158,13 @@ def _merged_manual(pages: list[Page]) -> str:
     )
 
 
-def _nav_to_html(items: list) -> tuple[str, int]:
+def _nav_to_html(items: list, include_non_pdf: bool = False) -> tuple[str, int]:
     output = []
     included_pages = 0
 
     for item in items:
         if isinstance(item, Page):
-            include, page_toc = _page_toc(item)
+            include, page_toc = _page_toc(item, include_non_pdf)
             if not include:
                 continue
 
@@ -163,7 +179,10 @@ def _nav_to_html(items: list) -> tuple[str, int]:
             )
             included_pages += 1
         elif isinstance(item, Section):
-            children, child_pages = _nav_to_html(item.children)
+            children, child_pages = _nav_to_html(
+                item.children,
+                include_non_pdf or item.title == "User Guide",
+            )
             if child_pages:
                 output.append(
                     f"<li>{html.escape(item.title or '')}{children}</li>"
@@ -181,10 +200,11 @@ def on_files(files: Files, config: Config) -> Files:
     pages = _nav_pages(nav)
 
     if os.environ.get(PDF_ONLY_ENV, "").lower() in {"1", "true", "yes"}:
+        user_guide_pages = _section_page_paths(nav, "User Guide")
         manual_file = File.generated(
             config,
             "generated_manual.md",
-            content=_merged_manual(pages),
+            content=_merged_manual(pages, user_guide_pages),
             inclusion=InclusionLevel.INCLUDED,
         )
         files.append(manual_file)

@@ -1,7 +1,3 @@
----
-pdf: true
----
-
 # Entering a load
 
 The left half of a load tab has three input tabs, the right half shows

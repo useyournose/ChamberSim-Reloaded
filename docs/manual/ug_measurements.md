@@ -1,7 +1,3 @@
----
-pdf: true
----
-
 # Measurements
 
 The Measurements tab holds your own chronograph and pressure data. It is

@@ -1,6 +1,3 @@
----
-pdf: true
----
 
 # Tools
 

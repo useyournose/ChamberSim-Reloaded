@@ -1,7 +1,3 @@
----
-pdf: true
----
-
 # Reports and printing
 
 The Report tab shows a formatted report of the load

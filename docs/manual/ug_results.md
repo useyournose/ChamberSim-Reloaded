@@ -1,7 +1,3 @@
----
-pdf: true
----
-
 # Results
 
 ## Results tab

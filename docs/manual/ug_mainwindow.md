@@ -1,7 +1,3 @@
----
-pdf: true
----
-
 # The main window
 
 The window has a menu bar and, below it, a row of tabs. The first tab,
