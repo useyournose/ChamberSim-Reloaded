@@ -56,6 +56,7 @@ markdown_extensions:
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax-pdf.js
 
 extra:
   social:
@@ -69,8 +70,6 @@ plugins:
           enabled: !ENV [MKDOCS_EXPORTER_PDF, true]
           concurrency: 8
           explicit: true
-          scripts:
-            - javascripts/mathjax-pdf.js
           aggregator:
             enabled: true
             output: documentation.pdf
