@@ -1,6 +1,6 @@
 @page {
   size: A4;
-  margin: 1.20cm;
+  margin: 1.50cm;
   @bottom-center {
     content: "Page " counter(page) " of " counter(pages);
   }

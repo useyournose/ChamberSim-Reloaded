@@ -92,7 +92,7 @@ plugins:
           covers: 
           aggregator:
             enabled: true
-            output: ChamberSimReloaded-UserGuide.pdf
+            output: ChamberSimReloaded-UserManual.pdf
             covers: limits
           stylesheets:
             - resources/stylesheets/pdf.scss
