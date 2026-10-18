@@ -23,6 +23,7 @@ SECTION_FILES = {
 }
 
 HEADING_RE = re.compile(r"^# (.+?)\s*$")
+FRONTMATTER = "---\npdf: true\n---\n\n"
 
 
 def split_sections(markdown: str) -> dict[str, str]:
@@ -66,7 +67,8 @@ def main() -> int:
         return 1
 
     for heading, filename in SECTION_FILES.items():
-        (manual_dir / filename).write_text(sections[heading], encoding="utf-8")
+        content = FRONTMATTER + sections[heading]
+        (manual_dir / filename).write_text(content, encoding="utf-8")
 
     print(f"Split {len(sections)} sections from {source.name}.")
     return 0
