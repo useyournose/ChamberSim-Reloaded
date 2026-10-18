@@ -60,3 +60,12 @@
   font-size: 1.2em;
   font-weight: 600;
 }
+
+.page-break {
+  display: none;
+  page-break-after: always;
+}
+
+.toc {
+  display: initial;
+}

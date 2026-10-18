@@ -45,13 +45,17 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-
+      title: Table of contents
+      title_class: toc-title
+      toc_depth: 2-3
   - pymdownx.highlight
   - pymdownx.superfences
 
   # Math support
   - pymdownx.arithmatex:
       generic: true
+extra_css:
+  - resources/stylesheets/custom.css
 
 extra_javascript:
   - javascripts/mathjax.js
