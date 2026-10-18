@@ -100,7 +100,6 @@ jobs:
 
       - name: show files
         run: ls -alR 
-        working-directory: .
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 #v7.0.0
@@ -145,7 +144,6 @@ jobs:
 
       - name: show files
         run: ls -alR 
-        working-directory: .
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 #v7.0.0
@@ -154,13 +152,11 @@ jobs:
 
       - name: Install requirements
         shell: bash
-        working-directory: docs/build
         run: |
           pip install -r requirements.txt
 
       - name: Build site
         shell: bash
-        working-directory: docs/build
         env:
           MKDOCS_EXPORTER_PDF: false
         run: mkdocs build
@@ -169,7 +165,7 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 ##v7.0.2
         with:
           name: user-site
-          path: docs/build/site
+          path: site
           retention-days: 1
           overwrite: true
 
