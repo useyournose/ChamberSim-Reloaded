@@ -185,7 +185,11 @@ jobs:
         with:
           pattern: user-*
           path: site
-             
+          merge-multiple: true
+          
+      - name: show files
+        run: ls -alR 
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d #v6.0.0
