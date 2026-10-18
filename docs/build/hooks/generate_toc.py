@@ -150,8 +150,6 @@ def _merged_manual(pages: list[Page], always_include_paths: set[str]) -> str:
     toc_parser.convert(chapter_markdown)
     return (
         "---\npdf: true\n---\n\n"
-        "# ChamberSim Reloaded User Manual\n\n"
-        "## Contents\n\n"
         f'<div class="pdf-toc">{toc_parser.toc}</div>\n\n'
         '<div class="page-break"></div>\n\n'
         f"{chapter_markdown}\n"
