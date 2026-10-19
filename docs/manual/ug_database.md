@@ -25,7 +25,8 @@ column:
 
 3. Optionally the records of **Gordon’s Reloading Tool** (Original
     GRT). The original’s database is encrypted and must first be
-    converted to a plain copy (Section [#using-the-originals-database](#using-the-originals-database)); choose that copy in **File** → Settings → Database. It is only read, never changed.
+    converted to a plain copy (Section "Using the originals database");
+    choose that copy in **File** → Settings → Database. It is only read, never changed.
 
 ## Using the original’s database
 

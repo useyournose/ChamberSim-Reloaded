@@ -6,9 +6,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - docs/**
-      - .github/workflows/*manual*.yml
+    tags: ["v*"]
   pull_request:
     types:
       - opened

@@ -9,7 +9,7 @@ want the original’s records.
 > *"Encrypted database error."*
 
 You chose the encrypted `GordonsReloadingTool.db`. Use the decrypted
-copy (see Section [using-the-originals-database](./ug_database.md#using-the-originals-database )).
+copy (see Section "Using the Original's Database" ).
 
 > *“Charge too high”.*
 
