@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   build-pdf:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       pdf_artifact_id: ${{ steps.upload-pdf-artifact.outputs.artifact-id }}
     steps:
