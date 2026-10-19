@@ -6,7 +6,6 @@ MD033:
     - 'img'
     - 'figcaption'
     - 'a'
-    
-exclude-rule:
-  - MD045
+
+MD045: false
 
