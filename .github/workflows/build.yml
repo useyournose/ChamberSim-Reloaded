@@ -64,7 +64,7 @@ jobs:
       # the manual built by the manual job replaces the tracked PDF that cmake --install packages
       - uses: actions/download-artifact@v8
         with:
-          pattern: "ChamberSimReloaded-UserManual.pdf"
+          artifact-ids: ${{ needs.manual.outputs.pdf_artifact_id }}
           path: manual-dl
           merge-multiple: true
           skip-decompress: true
@@ -136,7 +136,7 @@ jobs:
       # the manual built by the manual job replaces the tracked PDF that cmake --install packages
       - uses: actions/download-artifact@v8
         with:
-          pattern: "*ChamberSimReloaded-UserManual.pdf"
+          artifact-ids: ${{ needs.manual.outputs.pdf_artifact_id }}
           path: manual-dl
           merge-multiple: true
           skip-decompress: true
