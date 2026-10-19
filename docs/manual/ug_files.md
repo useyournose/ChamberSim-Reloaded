@@ -57,8 +57,8 @@ Cancel.
 
 ## The two file formats
 
-|  |  |
-|:---|:---|
+| Extension  | Description |
+| :--- | :--- |
 | `.csrload` | The program’s own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes. |
 | `.grtload` | The format of Gordon’s Reloading Tool. It can be opened and, as an export, written. |
 
