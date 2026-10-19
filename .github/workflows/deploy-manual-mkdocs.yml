@@ -6,11 +6,17 @@ on:
   push:
     branches:
       - main
+    paths:
+      - docs/**
+      - .github/workflows/*manual*.yml
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
+    paths:
+      - docs/**
+      - .github/workflows/*manual*.yml
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
