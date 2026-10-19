@@ -3,6 +3,8 @@ default: true
 MD033: 
   allowed_elements:
     - 'figure'
-    - 'image'
+    - 'img'
     - 'figcaption'
     - 'a'
+~MD045:
+
