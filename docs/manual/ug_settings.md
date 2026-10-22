@@ -3,12 +3,8 @@
 **File** → **Settings… (Ctrl+,)** has these groups and settings:
 
 - Database: The location of Gordon’s Reloading Tool (GRT) *plain* database
-
-- Units: The unit system (Metric, Imperial or Original) and **Reset per-field
-units**.
-
+- Units: The unit system (Metric, Imperial or Original) and **Reset per-field units**.
 - Solver: The calculation model, and GRT Original for original GRT files
-
 - Appearance
   - The **Font size** (with a button for the system default)
   - **Custom Title Bar** (Linux: the program’s own title bar with the menu in the title row) and
@@ -18,8 +14,7 @@ The theme is chosen in **View** → **Theme**, not here.
 
 - Start-up
   - Last Loads: **Open the loads of the last session at start**. Not used when load files
-are given on the command line.
-
+    are given on the command line.
 - Logging
   - The **Log level** (Debug, Info, Warning, Error or Off)
   - **Write to console** and
