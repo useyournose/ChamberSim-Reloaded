@@ -1,10 +1,8 @@
 # The database
 
-The Database tab
-(Figure <a href="#fig:database" data-reference-type="ref"
-data-reference="fig:database">2</a>) lists the Calibers, Projectiles and
-Propellants that are available for loads. The filter field searches all
-columns; click a column header to sort.
+The "Database" tab lists the Calibers, Projectiles and Propellants available for loads.  
+The filter field searches all columns.  
+You can click a column header to sort.
 
 <figure id="fig:database" data-latex-placement="ht">
 <img src="images/database.png" />
@@ -13,127 +11,118 @@ columns; click a column header to sort.
 
 ## Where the records come from
 
-The list is one view made of up to three sources, shown in the Source
-column:
+ChamberSim-Reloaded supports three different data sources, which are shown in the "Source" column:
 
-1. The **project database**: calibers, projectiles and propellants that
-    are built into the program.
+1. **Project** - calibers, projectiles and propellants that come with ChamberSim-Reloaded.
 
-2. Your **own records**, stored in the file `ChamberSimReloaded.db` in
+2. **Personal** -  Your own records, stored in the file `ChamberSimReloaded.db`. in
     the application data folder. Everything you create or copy is stored
     here.
 
-3. Optionally the records of **Gordon’s Reloading Tool** (Original
-    GRT). The original’s database is encrypted and must first be
-    converted to a plain copy (Section "Using the originals database");
-    choose that copy in **File** → Settings → Database. It is only read, never changed.
+3. **Original GRT** - Optionally you can import the records of *Gordon’s Reloading Tool*.
+    The import process is described in the next chapter.
 
 ## Using the original’s database
 
-Gordon’s Reloading Tool keeps its calibers, projectiles and propellants
-in an encrypted SQLite database (`GordonsReloadingTool.db`). ChamberSim
-Reloaded does not decrypt it by itself and does not ship one. A helper
-script makes a *plain* (unencrypted) *copy* that you then choose in the
-settings. The program and its database stay unchanged; only the copy is
-converted. You need your own installation of Gordon’s Reloading Tool.
+Gordon’s Reloading Tool (GRT) keeps its calibers, projectiles and propellants
+in an encrypted SQLite database `GordonsReloadingTool.db`. You need your own
+installation of GRT as ChamberSim-Reloaded does not contain a copy. A helper
+script makes a *plain* (unencrypted) *copy*. The original program and its
+database stay unchanged. Only the copy is created. 
 
 ### How it works
 
-The script starts a scratch copy of the original program. As soon as the
-original has unlocked its database, the script asks it to remove the
-encryption from that copy. Nothing is compiled and no key is typed in.
+The script creates a copy of the original program files and starts that copy.
+As soon as GRT has unlocked its database, the script asks it to remove the
+encryption from that copy. Nothing is compiled and no key required.
 
 ### Linux
 
-1.  Unpack the *Linux* version of Gordon’s Reloading Tool. Its folder
-    contains `GordonsReloadingTool`, `libs/` and
-    `GordonsReloadingTool.db`.
+The following steps works on Debian, Ubuntu, Mint, Fedora,
+Arch, Manjaro and openSUSE.
 
-2.  Copy `tools/grt_decrypt_db.sh` from the ChamberSim Reloaded sources
-    into that folder.
+1. Unpack the *Linux* version of GRT into a folder
+2. Copy the file `./tools/grt_decrypt_db.sh` from the ChamberSim-Reloaded
+   Github repository into the same folder
+3. Open a terminal in that folder and run `./grt_decrypt_db.sh`
+4. The script checks the dependencies and, after user approval, installs missing
+   requirements using `sudo`. Dependencies are
+    
+   - the debugger `gdb`
+   - the 32-bit `GTK 2` runtime required by GRT
+   - a virtual display, in headless setups
 
-3.  Open a terminal in that folder and run
-
-        ./grt_decrypt_db.sh
-
-4.  The script checks what is needed and, after asking, installs what is
-    missing with `sudo`: the debugger `gdb`, the 32-bit GTK 2 runtime
-    that the original needs and, when no desktop is running, a virtual
-    display. Debian/Ubuntu/Mint, Fedora, Arch/Manjaro and openSUSE are
-    supported.
-
-5.  After a few seconds the file `GordonsReloadingTool.plain.db` appears
+   and the runs GRT.
+5. After a few seconds the file `GordonsReloadingTool.plain.db` will be created
     in the same folder.
 
-Options: `-o FILE` (name of the output file), `-y` (install without
-asking), `-c` (only report what is found and missing, change nothing),
-`--headless` (use a virtual display, no window appears), `-t SECONDS`
-(give up after this time, default 90) and `-h` (help).
+CLI Options: 
+- `-o FILE` (name of the output file)
+- `-y` (install without asking)
+- `-c` (only report what is found and missing, change nothing),
+- `--headless` (use a virtual display, no window appears)
+- `-t SECONDS` (timeout, default 90) and
+- `-h` (help).
 
 ### Windows
 
-1.  Copy `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1` into
-    the folder of Gordon’s Reloading Tool (next to
-    `GordonsReloadingTool.exe`).
+1. Unpack the *Windows* version of GRT into a folder
+1. Copy the files `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1` 
+   from the ChamberSim-Reloaded Github repository into the same folder
+   (next to `GordonsReloadingTool.exe`).
+1. Double-click `grt_decrypt_db.cmd`. After user approval, Python 
+   (with `winget`) and the Python package `frida` is installed into a virtual
+   environment under `%LOCALAPPDATA%\ChamberSimReloaded\`.
+1. After the process, `GordonsReloadingTool.plain.db` is in the same
+   folder.
 
-2.  Double-click `grt_decrypt_db.cmd`. After asking, it installs Python
-    (with `winget`) and the Python package `frida` into a private
-    environment under `%LOCALAPPDATA%`$\backslash$`ChamberSimReloaded`.
-
-3.  When it has finished, `GordonsReloadingTool.plain.db` is in the same
-    folder.
-
-In PowerShell the options are `-Out FILE`, `-Yes`, `-Check` (report
-only) and `-Timeout SECONDS`.
+PowerShell CLI options:
+- `-Out FILE`
+- `-Yes`
+- `-Check` (report only) and
+- `-Timeout SECONDS`.
 
 ### Using the copy
 
-Open **File** → Settings → Database, choose
-`GordonsReloadingTool.plain.db` as the Original database. The status
+Open **File** → **Settings** → **Database**, choose
+`GordonsReloadingTool.plain.db` as the original database. The status
 line at the bottom then shows the file name and the number of calibers,
 projectiles and propellants, and the records appear in the Database tab
-with the source Original GRT. They are read-only; to change one, make a
-copy. You can also start the program with
+with the source **Original GRT**. They are read-only. To change one, create a
+copy. Alternatively start ChamberSim-Reloaded with the Command Line Parameter
 `-d GordonsReloadingTool.plain.db`.
 
 > [!NOTE]
 > Do not distribute the plain copy. It is for your own use with your own
 > copy of Gordon’s Reloading Tool. If the original program is updated,
-> make a new copy.
+> create a new copy.
 
 ## Working with records
 
-New…  
-adds a new record. Fill in the fields; labels show the unit of each
+Depending on the record type, you can use the following actions:
+
+- **New…**: adds a new record. Fill in the fields; labels show the unit of each
 field.
-
-Copy…  
-adds a changed copy of the selected record. A double click on a record
+- **Copy…**: adds a changed copy of the selected record. A double click on a record
 shows it and offers the same.
+- **Edit…**: changes the selected record.
+- **Delete**: removes the selected record. Load files, using that record data, are not affected.
+- **Export…**: saves the record as a file, to contribute it to the project’s database.
+- **Import bullets**: (Projectiles only) adds the bullets of a manufacturer's bullet file
+  (`.csrbullets`, or a plain `.json` file) to your own records after
+  asking for confirmation. The format is specified in `docs/BULLET_FILE.md`.
 
-Edit…  
-changes the selected record.
+Only **Personal** records can be edited or deleted. To change a record, marked as **Project** or
+**Original GRT**, create a copy.
 
-Delete  
-removes the selected record. Load files that use it keep their values.
+Double-clicking a record opens the details view.
 
-Export…  
-saves the record as a file, to contribute it to the project’s database.
+Propellants allow you to attach an overview photo and a detail photo
+(**Choose file…** and fill the scale in px/mm when possible ) in the detail view.
 
-Import bullets  
-(Projectiles only) adds the bullets of a manufacturer's bullet file
-(`.csrbullets`, or a plain `.json` file) to your own records after
-asking for confirmation. The format is described in
-`docs/BULLET_FILE.md`.
+The **Projectiles** view has a **Validated** column. 
 
-Only your own records can be edited or deleted. To change a project or
-original record, make a copy.
-
-For propellants you can attach an overview photo and a detail photo
-(Choose file…, with the scale in px/mm if you know it).
-
-The Projectiles list has a **Validated** column. A green check mark
-means that the bullet's length was measured on the bullet or checked
-against the original's database; a red cross means it has not been validated
-by hand (the length may be taken from the manufacturer's data or be an
-estimate; see the record's description).
+- A green check mark means that the bullet length was measured on the bullet or checked
+against the original's database.
+- a red cross means it has not been validated by hand, as the length may be taken from the manufacturer's data or be an estimate.
+  You'll find details on the record's details view.

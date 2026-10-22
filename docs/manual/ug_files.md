@@ -6,51 +6,59 @@
 
 ### Step 1: choose the components
 
-The tabs 1. Caliber, 2. Projectile and 3. Propellant list the records of
-the database. Select one record in each tab; below the lists the dialog
-shows what you have chosen so far. The projectile list can be restricted
-to bullets that fit the caliber (Show only bullets that fit the
-caliber). Next \> becomes available when all three components are
-chosen.
+The tabs `1. Caliber`, `2. Projectile` and `3. Propellant` lists the available components in the database.
+
+Select one record in each tab. The selected components are displayed below the table.
+The Records in the `2. Projectile` Tab can be filtered checking the `Show only bullets that fit the
+caliber` option.
+
+The `Next >` button will be available when all three components are
+selected.
 
 ### Step 2: check the load data
 
-The dialog shows the chosen components and the Load data: propellant
-charge, barrel length, bullet seating depth, twist length and propellant
-temperature. They are filled with defaults for your selection (barrel
+The dialog shows the selected components and the Load data:
+
+- propellant charge
+- barrel length
+- bullet seating depth
+- twist length and
+- propellant temperature.
+
+They are filled with default values for your selection (barrel
 length of the caliber, the cartridge at its maximum length, a charge of
 70 % of the case capacity) and you can change them freely. The charge is
 also shown in the other mass unit (grams or grains). Reset to defaults
 restores the defaults.
 
-\< Back returns to step 1. If you come back to step 2 with the *same*
-three components, your changes are kept; if you change any component,
-the load data are filled in again with the defaults of the new
+`< Back` returns to the previous step. If you return to step 2 with the same
+three components, your changes are kept. If you change any component,
+the load data are reset to the default values of the new
 selection.
 
-Create load opens the new load in its own tab. It is called “Untitled”
+`Create load` opens the load in a new tab. It is called “Untitled”
 until you save it.
 
 ## Opening loads
 
-**File** → Open load… (Ctrl+O) opens one or several files at once; you
-can also give files on the command line. Each load gets its own tab,
+**File** → **Open load… (Ctrl+O)** opens one or more files at once. This
+is also supported via command line. Each load is loaded in a seperate tab,
 named after the file. The file dialog offers three filters: all loads,
 `.csrload` only, and the original’s `.grtload` only.
 
-- A load that is already open is not opened twice; its tab is shown
+- A load that is already open is not opened twice. It`s tab is shown
   instead.
 
-- **File** → Open recent lists the last 12 loads. An entry whose file
+- **File** → **Open recent** lists the last 12 loads. An entry whose file
   has disappeared or cannot be read is removed from the list.
 
 - If a file cannot be read, a message names the file and the reason.
 
 ## Saving loads
 
-A tab with unsaved changes shows an asterisk after its name.
-**File** → Save (Ctrl+S) writes the load to its file; a new load
-(“Untitled”) and Save as… (Ctrl+Shift+S) ask for a file name. If you
+A Load with unsaved changes shows is marked by asterisk after its name
+in the Tab. **File** → **Save (Ctrl+S)** writes the load to its file
+A new load (“Untitled”) and **Save as… (Ctrl+Shift+S)** ask for a file name. If you
 leave out the extension, `.csrload` is added. When you close a tab or
 quit with unsaved changes the program asks whether to Save, Discard or
 Cancel.
@@ -62,13 +70,13 @@ Cancel.
 | `.csrload` | The program’s own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes. |
 | `.grtload` | The format of Gordon’s Reloading Tool. It can be opened and, as an export, written. |
 
-The format is chosen by the file name’s extension.
+The format is chosen by the file extension.
 
 ### Opening an original file
 
 A `.grtload` file is read completely, including the measurements, notes
 and pictures of its appendix. Because the program saves only in its own
-format, Save on such a load works like Save as…: it suggests the same
+format, Save on such a load works like `Save as…`: it suggests the same
 name with the extension `.csrload`. The original file is never changed.
 
 Record export in the database (Export…) likewise adds `.json` to a name
