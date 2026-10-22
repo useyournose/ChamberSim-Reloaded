@@ -11,7 +11,7 @@ adjustable.
 
 ## Report templates
 
-In the Report, **Report template…** opens the template editor. A template
+In the Report, **Edit template…** opens the template editor. A template
 is text with placeholders of the form `~~source.property~~` or
 `~~source.property("#.00")~~` (including the number format). Use **Insert value**
 to pick a placeholder and **Reset to default** to restore the standard
