@@ -28,7 +28,7 @@ Gordon’s Reloading Tool (GRT) keeps its calibers, projectiles and propellants
 in an encrypted SQLite database `GordonsReloadingTool.db`. You need your own
 installation of GRT as ChamberSim-Reloaded does not contain a copy. A helper
 script makes a *plain* (unencrypted) *copy*. The original program and its
-database stay unchanged. Only the copy is created. 
+database stay unchanged. Only the copy is created.
 
 ### How it works
 
@@ -47,7 +47,7 @@ Arch, Manjaro and openSUSE.
 3. Open a terminal in that folder and run `./grt_decrypt_db.sh`
 4. The script checks the dependencies and, after user approval, installs missing
    requirements using `sudo`. Dependencies are
-    
+
    - the debugger `gdb`
    - the 32-bit `GTK 2` runtime required by GRT
    - a virtual display, in headless setups
@@ -56,7 +56,8 @@ Arch, Manjaro and openSUSE.
 5. After a few seconds the file `GordonsReloadingTool.plain.db` will be created
     in the same folder.
 
-CLI Options: 
+CLI Options:
+
 - `-o FILE` (name of the output file)
 - `-y` (install without asking)
 - `-c` (only report what is found and missing, change nothing),
@@ -67,16 +68,17 @@ CLI Options:
 ### Windows
 
 1. Unpack the *Windows* version of GRT into a folder
-1. Copy the files `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1` 
+1. Copy the files `tools/grt_decrypt_db.cmd` and `tools/grt_decrypt_db.ps1`
    from the ChamberSim-Reloaded Github repository into the same folder
    (next to `GordonsReloadingTool.exe`).
-1. Double-click `grt_decrypt_db.cmd`. After user approval, Python 
+1. Double-click `grt_decrypt_db.cmd`. After user approval, Python
    (with `winget`) and the Python package `frida` is installed into a virtual
    environment under `%LOCALAPPDATA%\ChamberSimReloaded\`.
 1. After the process, `GordonsReloadingTool.plain.db` is in the same
    folder.
 
 PowerShell CLI options:
+
 - `-Out FILE`
 - `-Yes`
 - `-Check` (report only) and
@@ -120,7 +122,7 @@ Double-clicking a record opens the details view.
 Propellants allow you to attach an overview photo and a detail photo
 (**Choose file…** and fill the scale in px/mm when possible ) in the detail view.
 
-The **Projectiles** view has a **Validated** column. 
+The **Projectiles** view has a **Validated** column.
 
 - A green check mark means that the bullet length was measured on the bullet or checked
 against the original's database.

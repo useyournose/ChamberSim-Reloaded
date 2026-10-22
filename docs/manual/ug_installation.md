@@ -33,10 +33,9 @@ Choose "I understand" to continue.
 Check "Do not show this again" and "I understand" will supress the notice for later starts.  
 Quit closes the program.
 
-
 ## Command-line options
 
-```
+```text
 ChamberSimReloaded [options] [load.csrload ...]
     -d, --database <file> the original's (plain) database
     -r, --reference <f>   overlay a reference result (JSON) on the chart
@@ -48,7 +47,8 @@ ChamberSimReloaded [options] [load.csrload ...]
     --help                all options
 ```
 
-Files given on the command line are opened as loads.  
+Files given on the command line are opened as loads.
+ 
 - `--theme` applies to this run only, while `--units` and `--calibration` are saved in the settings.
 - `--screenshot` saves an image of the window and exits. Check `--help` to read more about `--tab`, `--input-tab` and`--result-tab`, supported by this option.
 
@@ -58,7 +58,7 @@ The program `csr_sim` runs simulations without a graphical interface,
 for scripts and batch jobs. It reads `.csrload` and `.grtload` files and
 prints one row per load and ladder step.
 
-``` csr_sim --help
+```text csr_sim --help
 Usage: csr_sim.exe [options] load...
 Simulates loads without a GUI. Units: g, mm, bar, m/s, J, ms. Exit code 0 = all ok, 1 = a simulation failed, 2 = usage or read error.
 

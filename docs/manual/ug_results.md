@@ -47,15 +47,18 @@ the steps. Click one to display its curve.
 
 In **File** → **Settings** → **Solver** you select the model:
 
-### Physical Model  
+### Physical Model 
+
 (default) A time-integrated model with flame spread, engraving,
 friction, air, heat loss and spin. It is fitted to published load data
 of the powder manufacturers.
 
-### Published  
+### Published
+
 The GRT equations with empirical constants.
 
-### GRT Original  
+### GRT Original
+
 Calibrated against reference runs of the original program.
 
 The model in use is shown in the results. The three models give

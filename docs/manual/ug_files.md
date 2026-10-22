@@ -102,8 +102,8 @@ and propellant with their values, not only a references to the database. Consequ
   referencing it (the program tells you so when you delete a record)
 
 - to apply changes of a record to an existing load, select it again in
-  the load (`Select Propellant…` and so on). If a propellant has changed, 
-  a banner highlights that the load differs from the database.
+  the load (`Select Propellant…` and so on). If a propellant has changed, a
+  banner highlights that the load differs from the database.
 
 Measurement series, notes and pictures are part of the file as well.
 Parts of an original file that the program does not interpret are kept

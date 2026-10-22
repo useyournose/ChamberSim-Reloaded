@@ -38,6 +38,7 @@ A note field per charge holds rifle, chronograph and conditions.
 ## Importing chronograph files
 
 **Import chronograph file…** reads
+
 - **Garmin Xero** files (the `.fit` file of the C1 Pro, or the `*.CSV` exported by the Garmin Shotview App, in any language of the app)
 - **MagnetoSpeed** CSV files and
 - **Labradar** `Report.csv` files.
