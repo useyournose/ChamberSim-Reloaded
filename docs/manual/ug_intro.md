@@ -51,8 +51,7 @@ pressure, with their own constants) are known weak spots. Powders
 without physical burn values, such as your own records, are less
 accurate than the project’s powders. The GRT Original model reproduces
 the results of the original program to about 1 % in velocity and 3 % in
-pressure. The files `README.md` and `docs/ACCURACY.md` of the project
-contain the current accuracy tables.
+pressure. The files [README.md](https://github.com/Schildkroet/ChamberSim-Reloaded/blob/main/README.md) and [docs/ACCURACY.md](https://github.com/Schildkroet/ChamberSim-Reloaded/blob/main/docs/ACCURACY.md) of the project contain the current accuracy tables.
 
 > [!WARNING]
 > Never use a calculated load without checking it against the

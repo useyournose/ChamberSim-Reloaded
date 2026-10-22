@@ -5,7 +5,7 @@ the results.
 
 ## Cartridge & gun
 
-Shows the caliber (Select Caliber… replaces it) and a table of
+Shows the caliber (**Select Caliber…** replaces it) and a table of
 properties: designation, overall length, case length, case volume, bore,
 effective area, maximum permitted pressure, barrel length, twist length,
 seating depth and more. Below the table the drawings show the cartridge,
@@ -14,7 +14,7 @@ the chamber and (when available) the powder.
 The Sebert factor (0 to 1) is kept as the file has it, 0 included, and
 all models use it as it is (the Physical model no longer replaces 0 by
 0.5 in the propellant impulse and the recoil). A value outside 0 to 1
-becomes 0.5 when the load is opened; the panel accepts only 0 to 1. The
+becomes 0.5 when the load is opened. The panel accepts only 0 to 1. The
 report shows the value the simulation used.
 
 ### Primer and start pressure.
@@ -36,13 +36,13 @@ pressure.
 After you choose another caliber, the program can also set barrel
 length, seating depth and charge to the defaults of the new caliber
 (tick the corresponding option in the selection dialog). The primer
-becomes the usual primer of the new caliber; the additional start
+becomes the usual primer of the new caliber. The additional start
 pressure stays.
 
 ## Projectile
 
-Mass, diameter, length and the other bullet data. Select Projectile…
-replaces the bullet; tick Show only bullets that fit the caliber to
+Mass, diameter, length and the other bullet data. **Select Projectile…**
+replaces the bullet. Check "Show only bullets that fit the caliber" to
 narrow the list. The Initial Gas Pressure is the pressure at which the
 bullet starts to move and engraves. It is the primer’s start pressure plus the
 Additional Start Pressure of the Cartridge & gun tab; editing it changes
@@ -57,30 +57,28 @@ until you select the bullet again.
 ## Propellant
 
 Powder charge, explosion heat, burn rate and the form-function values.
-Select Propellant… replaces the powder.
+**Select Propellant…** replaces the powder.
 
-With the Physical Model, project powders also have *physical burn
-values*. They are kept in the load file. If they are missing, an orange
-banner tells you so and offers Use the physical values….
+With the Physical Model, project powders also have *physical burn values*.
+They are kept in the load file. If they are missing, an orange
+banner tells you so and offers **Use the physical values…**.
 
 A load keeps its own copy of the powder values. If a database record of
 that powder was corrected after the load was made, or you edited the
-values in the load, a second orange banner says *Powder values differ
-from the database*. The load is still calculated with its own values.
-Use the database values… replaces them with those of the closest record
+values in the load, a second orange banner says *Powder values differ from the database*.
+The load is still calculated with its own values.
+**Use the database values…** replaces them with those of the closest record
 (the charge and all other settings stay; Undo takes it back). A powder
 can have several records, so the banner appears only if no record has
-exactly the values of the load. With the Physical Model only the
-project’s records are compared, because the original database is not
-updated; with the other models all records count.
+exactly the values of the load. With the **Physical Model**, only the
+"project" records are compared, because the "Original GRT" records receive no updates. Other models compare all records.
 
 ## Editing values
 
 Click a value in a property table to edit it. Values with a unit have a
-drop-down menu for the unit; the choice applies to this field only.
-Reset per-field units in the settings returns every field to the chosen
-unit system. Some fields are coded values (for example the Shotshell
-flag) and offer a list of choices.
+drop-down menu for the unit. The choice applies to this field only.
+**File** → **Settings** → **Reset per-field units** returns every field to the selected
+unit system. Some fields offer choices as Drop-Down Menu (i.e. the "Shotshell" flag or "Primer" field).
 
 ## Measuring a load
 
@@ -91,19 +89,23 @@ the mean values.
 
 ## Shotgun loads
 
-Calibers with Shotshell set to yes use their own model terms. Enter such
+Calibers with Shotshell set to `yes` use their own model terms. Enter such
 a load as follows:
 
-- Projectile: mass = shot + wad (about 2.5 g for a plastic wad), length
-  = height of the shot column plus the wad, diameter = bore diameter;
+- Projectile:
+  - mass = shot + wad (about 2.5 g for a plastic wad)
+  - length = height of the shot column plus the wad
+  - diameter = bore diameter
 
-- seated completely inside the hull: cartridge overall length = hull
-  length, seating depth = projectile length;
+- seated completely inside the hull:
+  - cartridge overall length = hull length
+  - seating depth = projectile length
 
 - Initial Gas Pressure = crimp release, about 20 bar.
 
-The load also has the choices Shotshell Hull, Shotshell Wad and
-Shotshell Primer, each with three groups of similar parts (low, medium
+The load also has the choices *Shotshell Hull*, *Shotshell Wad* and
+*Shotshell Primer*, each with three groups of similar parts (low, medium
 and high pressure). They change the pressure by up to about
-$\pm 20\,\%$. Shotgun results are less reliable than rifle and handgun
-results.
+$\pm 20\,\%$.
+
+Shotgun results are less reliable than rifle and handgun results.
