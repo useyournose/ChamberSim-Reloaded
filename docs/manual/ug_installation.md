@@ -48,7 +48,7 @@ ChamberSimReloaded [options] [load.csrload ...]
 ```
 
 Files given on the command line are opened as loads.
- 
+
 - `--theme` applies to this run only, while `--units` and `--calibration` are saved in the settings.
 - `--screenshot` saves an image of the window and exits. Check `--help` to read more about `--tab`, `--input-tab` and`--result-tab`, supported by this option.
 

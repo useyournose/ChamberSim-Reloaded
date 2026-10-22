@@ -47,7 +47,7 @@ the steps. Click one to display its curve.
 
 In **File** → **Settings** → **Solver** you select the model:
 
-### Physical Model 
+### Physical Model
 
 (default) A time-integrated model with flame spread, engraving,
 friction, air, heat loss and spin. It is fitted to published load data
