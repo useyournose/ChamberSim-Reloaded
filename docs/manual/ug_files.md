@@ -67,47 +67,43 @@ Cancel.
 
 | Extension | Description |
 | :--- | :--- |
-| `.csrload` | The program’s own format (XML). It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes. |
-| `.grtload` | The format of Gordon’s Reloading Tool. It can be opened and, as an export, written. |
+| `.csrload` | The program’s own XML format. It contains everything: all input values, the caliber, projectile and propellant records with their values, the physical burn values of the Physical Model, the shotshell parts and your measurements and notes. |
+| `.grtload` | The format of Gordon’s Reloading Tool (GRT). It can be opened and, as an export, written. |
 
 The format is chosen by the file extension.
 
-### Opening an original file
+### Opening a GRT file
 
 A `.grtload` file is read completely, including the measurements, notes
 and pictures of its appendix. Because the program saves only in its own
-format, Save on such a load works like `Save as…`: it suggests the same
+format, `Save` on such a load works like `Save as…`: it suggests the same
 name with the extension `.csrload`. The original file is never changed.
 
 Record export in the database (Export…) likewise adds `.json` to a name
 without a suffix.
 
-### Exporting for the original program
+### Exporting for GRT program
 
-In Save as… choose the filter *Original GRT loads, without the data of
-ChamberSim Reloaded* (or type a name ending in `.grtload`). The exported
-file can be opened in Gordon’s Reloading Tool. It leaves out what that
+In **File** → **Save as…**,  choose the filter "Original GRT loads, without the data of
+ChamberSim Reloaded*" (or type a name ending in `.grtload`). The exported
+file can be opened in GRT. It excludes, what that
 program does not know: the physical burn values and the shotshell part
-choices. Keep a `.csrload` copy if you do not want to lose these.
+choices. Keep a `.csrload` copy, if you do not want to lose these.
 
 ## What a load file contains
 
-A load file is self-contained. The records of the caliber, projectile
-and propellant are stored in the file with their values, not as
-references to the database. Consequently:
+A load file is self-contained and contains the complete records of caliber, projectile
+and propellant with their values, not only a references to the database. Consequently:
 
 - the load opens and calculates the same on another computer, without
-  the original database;
+  the original database
 
-- deleting or changing a record in the database does not change loads
-  that were made with it (the program tells you so when you delete a
-  record);
+- deleting or changing a record in the database does not effect existing loads
+  referencing it (the program tells you so when you delete a record)
 
 - to apply changes of a record to an existing load, select it again in
-  the load (Select Propellant… and so on); for a powder a banner points
-  out that the load differs from the database, see
-  section <a href="#sec:propellant" data-reference-type="ref"
-  data-reference="sec:propellant">6.3</a>.
+  the load (`Select Propellant…` and so on). If a propellant has changed, 
+  a banner highlights that the load differs from the database.
 
 Measurement series, notes and pictures are part of the file as well.
 Parts of an original file that the program does not interpret are kept
@@ -115,21 +111,18 @@ unchanged when you save.
 
 ## Undo and redo
 
-Every load remembers its last 100 edits. **Edit** → Undo (Ctrl+Z) takes
-back the last edit and **Edit** → Redo (Ctrl+Shift+Z or Ctrl+Y) restores
-it again. The menu entries name the edit, for example Undo Select
-Propellant. The following edits are recorded:
+Every load remembers its last 100 edits. **Edit** → **Undo (Ctrl+Z)** takes
+back the last edit and **Edit** → **Redo (Ctrl+Shift+Z or Ctrl+Y)** restores
+it again. The menu entries name the edit, for example `Undo Select
+Propellant`. The following edits are recorded:
 
-- changing a value in the property tables;
+- changing a value in the property tables
+- choosing another caliber, projectile or propellant
+- applying the result of **Fit to measurements** and accepting the physical
+  burn values of a powder
+- changes in the "Measurements" tab
 
-- choosing another caliber, projectile or propellant;
-
-- applying the result of Fit to measurements and accepting the physical
-  burn values of a powder;
-
-- changes in the Measurements tab.
-
-The history belongs to one load and is not saved in the file. It starts
+The history is seperated by load, but is not saved in the file. It starts
 empty when a load is opened and is kept while the load is saved. If you
 undo back to the state that was saved, the load no longer counts as
 modified. A new edit after an undo discards the steps that could have
@@ -139,18 +132,18 @@ be undone.
 ## Sessions
 
 The program remembers the loads that were open when you quit (only those
-that have a file). With **File** → Settings → Start-up →  Open the loads
-of the last session at start they are opened again at the next start,
+that have a file). With **File** → **Settings** → **Start-up** →  
+**Open the loads of the last session at start** they are opened again at the next start,
 and the tab that was shown is selected again. Files that no longer exist
 are skipped.
 
 ## Tips
 
-- Save a load under a new name before you experiment with it; Save as…
+- Save a load under a new name before you experiment with it. **Save as…**
   leaves the old file as it is.
 
 - Put the files of one rifle and component set into one folder and use
-  the series of the Measurements tab for the range sessions, so that a
+  the series of the "Measurements" tab for the range sessions, so that a
   single file holds the history of a load.
 
-- Files are plain XML text and suit version control or backup tools.
+- Files are plain XML and suits version control or backup tools.
